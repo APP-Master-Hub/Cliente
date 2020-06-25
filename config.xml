@@ -4,7 +4,8 @@
     xmlns:android = "http://schemas.android.com/apk/res/android"
     id        = "app.masterhub.clientev2"
     version   = "1.5.0"
-	android-versionCode="1">
+	android-versionCode="1"
+  	ios-CFBundleVersion="1">
     <name>Master Hub® - v2</name>
   <description>
         Aplicativo - Módulo Clientes para interação com o sistema Master Hub, Um MUNDO na palma da sua mão!
@@ -14,12 +15,78 @@
     </author>
   <content src="index.html"/>
   <preference name="orientation" value="portrait"/>
+	<preference name="phonegap-version" value="cli-9.0.0" />	
+	<preference name="AutoHideSplashScreen" value="false" />  	
   <preference name="SplashScreenDelay" value="0"/>
   <preference name="fullscreen" value="false"/>
+    <preference name="ShowSplashScreenSpinner" value="false" />	   
   <preference name="android-minSdkVersion" value="19"/>
   <preference name="android-targetSdkVersion" value="28"/>
   <preference name="KeepRunning" value="true"/>
   <allow-navigation href="*"/>
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" spec="1.3.4" />	   
+    <gap:plugin name="cordova-plugin-device" source="npm" />		
+    <gap:plugin name="cordova-plugin-inappbrowser" source="npm" spec="3.2.0" />		
+	<gap:plugin spec="https://github.com/apache/cordova-plugin-wkwebview-engine.git" source="git" />	
+	<gap:plugin name="cordova-plugin-splashscreen" source="npm" spec="5.0.3" />	
+	<gap:plugin name="cordova-plugin-geolocation" source="npm" spec="4.0.2" />
+	<gap:plugin name="cordova-plugin-network-information" source="npm" spec="2.0.2" />
+	    
+    <gap:plugin name="phonegap-plugin-push" source="npm" spec="2.1.2"  />
+    <gap:plugin name="cordova-plugin-ionic-webview" source="npm" spec="4.2.1"  />
+    <gap:plugin name="cordova-plugin-enable-multidex" source="npm" spec="^0.2.0"  />
+    <gap:plugin name="cordova-plugin-firebasex" source="npm" spec="9.1.0-cli"  />
+            
+    <gap:plugin spec="https://github.com/bastikikang/cordova-plugin-request-location-accuracy" source="git">    
+      <variable name="PLAY_SERVICES_VERSION" value="11.0.1" /> 
+    </gap:plugin>
+    <gap:plugin spec="https://github.com/dpa99c/cordova-plugin-dialogs.git" source="git" />    
+    
+    <gap:plugin name="cordova-plugin-x-toast" source="npm" spec="2.7.0" />         
+            
+    <!--ENABLED RAZOR PAY IF ONLY YOU NEED IT-->
+	<!--<gap:plugin spec="https://github.com/razorpay/razorpay-cordova.git#v1.4.3" source="git" />
+	<gap:plugin spec="https://github.com/razorpay/razorpay-cordova.git#v1.3.5" source="git" />-->
+    
+    <gap:plugin name="cordova-plugin-media" source="npm" spec="5.0.2" />
+    
+    <!--WHEN COMPILING THE APP TO IOS USE cordova.plugins.diagnostic version 5.0.1 FOR ANDROID use 4.0.0-->
+    <!--<gap:plugin name="cordova.plugins.diagnostic" source="npm" spec="5.0.1" />-->
+    <gap:plugin name="cordova.plugins.diagnostic" source="npm" spec="4.0.0" />    
+    
+    <gap:plugin name="cordova-plugin-buildinfo" source="npm" spec="4.0.0"  />
+    <gap:plugin name="cordova-plugin-camera" source="npm" spec="4.1.0" />
+    <gap:plugin name="cordova-plugin-file-transfer" source="npm" spec="1.7.1" /> 
+                       
+    <gap:plugin name="cordova-plugin-googleplus" source="npm" spec="7.0.2"  >    
+	  <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.700766185398-f1vu9pld5pb1f1hnb5eoupidoeo6aukv" />
+	  <variable name="PLAY_SERVICES_VERSION" value="11.0.1" /> 
+	</gap:plugin>
+       
+	<!--ENABLED FACEBOOK ONLY IF YOU HAVE APP ID-->
+	<!--
+	<gap:plugin name="cordova-plugin-facebook4" source="npm"  spec="6.4.0" >
+	  <variable name="APP_ID" value="247951822354120" />
+	  <variable name="APP_NAME" value="Master Hub" />
+	</gap:plugin>	
+	-->
+		
+	<plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" source="npm" spec="5.0.4" >
+       <variable name="GOOGLE_API_KEY_FOR_ANDROID" value="AIzaSyCjgZJOBT5K3Ms5ns20Q3lbopscSoGt3aI" />
+    </plugin>
+	
+	<plugin name="com.cmackay.plugins.googleanalytics" source="npm" spec="1.0.4" >	
+	   <variable name="ANALYTICS_VERSION" value="11.0.1" /> 
+	</plugin>
+	
+	<gap:plugin name="com-sarriaroman-photoviewer" source="npm" spec="1.2.4"  /> 
+	
+	<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" spec="5.4.6" > 
+	   <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="preciso de acesso à biblioteca de fotos para obter fotos a partir daí" /> 
+	   <variable name="PHOTO_LIBRARY_ADD_USAGE_DESCRIPTION" value="preciso acessar a biblioteca de fotos para salvar imagens lá" /> 
+	</gap:plugin>
+		
+    <gap:plugin name="cordova-plugin-statusbar" source="npm"  /> 
   <allow-intent href="itms:*"/>
   <allow-intent href="itms-apps:*"/>
   <gap:config-file platform="android" parent="/manifest">
@@ -68,6 +135,7 @@
       <application android:usesCleartextTraffic="true"/>
     </edit-config>
     <resource-file src="www/beep.wav" target="app/src/main/res/raw/beep.wav"/>
+	    <resource-file src="www/beep.wav" target="res/raw/beep.wav" /> 	    
     <resource-file src="google-services.json" target="google-services.json"/>
     <resource-file src="google-services.json" target="app/google-services.json"/>
     <icon density="ldpi" src="res/icons/android/drawable-ldpi-icon.png"/>
@@ -91,6 +159,7 @@
   </platform>
   <platform name="ios">
     <allow-intent href="tel:*"/>
+	    <resource-file src="GoogleService-Info.plist" /> 	    
     <resource-file src="www/beep.wav"/>
      <preference name="WKWebViewOnly" value="true"/>
     <feature name="CDVWKWebViewEngine">
@@ -135,7 +204,7 @@
     <splash height="2732" platform="ios" src="res/screens/ios/Default@2x~ipad~anyany.png" width="2732"/>
     <splash height="2732" platform="ios" src="res/screens/ios/Default@2x~ipad~comany.png" width="1278"/>
   </platform>
-  <preference name="WindowsStorePublisherName" value="My Name"/>
+  <preference name="WindowsStorePublisherName" value="Master Hub"/>
   <preference name="WindowsStoreIdentityName" value="784321d4-bab8-3957-d0a2-426559520ecc"/>
   <preference name="ios-XCBuildConfiguration-TARGETED_DEVICE_FAMILY" value="1"/>
   <preference name="AutoHideSplashScreen" value="false"/>
