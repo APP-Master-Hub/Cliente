@@ -23,7 +23,6 @@
   <preference name="android-minSdkVersion" value="19"/>
   <preference name="android-targetSdkVersion" value="28"/>
   <preference name="KeepRunning" value="true"/>
-  <allow-navigation href="*"/>
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />	   
     <gap:plugin name="cordova-plugin-device" source="npm" />		
 	<gap:plugin spec="https://github.com/apache/cordova-plugin-wkwebview-engine.git" source="git" />	
@@ -54,8 +53,8 @@
     <!--<gap:plugin name="cordova.plugins.diagnostic" source="npm" spec="5.0.1" />-->
     <gap:plugin name="cordova.plugins.diagnostic" source="npm" spec="4.0.0" />    
     
-    <gap:plugin name="cordova-plugin-buildinfo" source="npm" spec="4.0.0"  />
-    <gap:plugin name="cordova-plugin-camera" source="npm" spec="4.1.0" />
+    <gap:plugin name="cordova-plugin-buildinfo" source="npm" spec="2.0.1"  />
+    <gap:plugin name="cordova-plugin-camera" source="npm" spec="2.4.1" />
     <gap:plugin name="cordova-plugin-file-transfer" source="npm" spec="1.7.1" /> 
                        
     <gap:plugin name="cordova-plugin-googleplus" source="npm" spec="7.0.2"  >    
@@ -64,7 +63,6 @@
 	</gap:plugin>
        
 	<!--ENABLED FACEBOOK ONLY IF YOU HAVE APP ID-->
-	<!-- -->
 	<gap:plugin name="cordova-plugin-facebook4" source="npm"  spec="6.4.0" >
 	  <variable name="APP_ID" value="247951822354120" />
 	  <variable name="APP_NAME" value="Master Hub" />
@@ -91,6 +89,8 @@
     <access origin="tel:*" launch-external="yes" />
   <allow-intent href="itms:*"/>
   <allow-intent href="itms-apps:*"/>
+  <allow-navigation href="*"/>
+  
   <gap:config-file platform="android" parent="/manifest">
     <supports-screens android:xlargeScreens="true" android:largeScreens="true" android:smallScreens="true"/>
     <application android:theme="@android:style/Theme.NoTitleBar">
@@ -103,7 +103,6 @@
     <config-file platform="ios" target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
 	        <string>preciso usar a sua localização</string>
     </config-file>
-    <preference name="orientation" value="portrait"/>
   </platform>
   <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
     <string>preciso de acesso à câmera para tirar fotos</string>
