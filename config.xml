@@ -14,26 +14,28 @@
         popcomputadores.com.br
     </author>
   <content src="index.html"/>
-  <preference name="orientation" value="portrait"/>
-	<preference name="phonegap-version" value="cli-9.0.0" />	
-	<preference name="AutoHideSplashScreen" value="false" />  	
-  <preference name="SplashScreenDelay" value="0"/>
-  <preference name="fullscreen" value="false"/>
-    <preference name="ShowSplashScreenSpinner" value="false" />	   
-  <preference name="android-minSdkVersion" value="19"/>
-  <preference name="android-targetSdkVersion" value="28"/>
-  <preference name="KeepRunning" value="true"/>
-    <gap:plugin name="cordova-plugin-whitelist" source="npm" />	   
-    <gap:plugin name="cordova-plugin-device" source="npm" />		
+	
+		<preference name="orientation" value="portrait"/>
+		<preference name="phonegap-version" value="cli-9.0.0" />	
+		<preference name="AutoHideSplashScreen" value="false" />  	
+		<preference name="SplashScreenDelay" value="0"/>
+		<preference name="fullscreen" value="false"/>
+		<preference name="ShowSplashScreenSpinner" value="false" />	   
+		<preference name="android-minSdkVersion" value="19"/>
+		<preference name="android-targetSdkVersion" value="28"/>
+		<preference name="KeepRunning" value="true"/>
+	
+	<gap:plugin name="cordova-plugin-whitelist" source="npm" />	   
+	<gap:plugin name="cordova-plugin-device" source="npm" />		
 	<gap:plugin spec="https://github.com/apache/cordova-plugin-wkwebview-engine.git" source="git" />	
 	<gap:plugin name="cordova-plugin-splashscreen" source="npm" />	
 	<gap:plugin name="cordova-plugin-geolocation" source="npm" />
 	<gap:plugin name="cordova-plugin-network-information" source="npm" />
-	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" spec="3.2.0" />	    
-    <gap:plugin name="phonegap-plugin-push" source="npm" spec="2.1.2"  />
+	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" />	    
+	<gap:plugin name="phonegap-plugin-push" source="npm"  />
 	<gap:plugin spec="https://github.com/dpa99c/cordova-plugin-dialogs.git" source="git" />
+	<gap:plugin name="cordova-plugin-statusbar" source="npm"  /> 
      <!--<gap:plugin name="cordova-plugin-ionic-webview" source="npm" spec="4.2.1"  />
-         
     <gap:plugin name="cordova-plugin-enable-multidex" source="npm" spec="^0.2.0"  /> 
     <gap:plugin name="cordova-plugin-firebasex" source="npm" spec="9.1.0-cli"  /> -->
             
@@ -41,7 +43,7 @@
       <variable name="PLAY_SERVICES_VERSION" value="11.0.1" /> 
     </gap:plugin>
     
-    <gap:plugin name="cordova-plugin-x-toast" source="npm" spec="2.7.0" />         
+    <gap:plugin name="cordova-plugin-x-toast" source="npm" />         
             
     <!--ENABLED RAZOR PAY IF ONLY YOU NEED IT-->
 	<!--<gap:plugin spec="https://github.com/razorpay/razorpay-cordova.git#v1.4.3" source="git" />
@@ -84,12 +86,12 @@
 	   <variable name="PHOTO_LIBRARY_ADD_USAGE_DESCRIPTION" value="preciso acessar a biblioteca de fotos para salvar imagens lá" /> 
 	</gap:plugin>
 		
-    <gap:plugin name="cordova-plugin-statusbar" source="npm"  /> 
-    <access origin="*" />
-    <access origin="tel:*" launch-external="yes" />
-  <allow-intent href="itms:*"/>
-  <allow-intent href="itms-apps:*"/>
-  <allow-navigation href="*"/>
+			<access origin="*" />
+			<access origin="tel:*" launch-external="yes" />
+	
+			<allow-intent href="itms:*"/>
+			<allow-intent href="itms-apps:*"/>
+			<allow-navigation href="*"/>
   
   <gap:config-file platform="android" parent="/manifest">
     <supports-screens android:xlargeScreens="true" android:largeScreens="true" android:smallScreens="true"/>
