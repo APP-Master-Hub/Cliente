@@ -34,7 +34,7 @@
 	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" />	    
 	<gap:plugin name="phonegap-plugin-push" source="npm"  />
 	<gap:plugin name="cordova-plugin-statusbar" source="npm"  /> 
-	<gap:plugin name="cordova-plugin-x-toast" source="npm" />
+	<gap:plugin name="cordova-plugin-x-toast" source="npm" spec="2.7.0" />         
      <!-- 	<gap:plugin spec="https://github.com/dpa99c/cordova-plugin-dialogs.git" source="git" />
 	<gap:plugin name="cordova-plugin-ionic-webview" source="npm" spec="4.2.1"  />
     <gap:plugin name="cordova-plugin-enable-multidex" source="npm" spec="^0.2.0"  /> 
