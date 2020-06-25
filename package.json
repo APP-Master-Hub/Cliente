@@ -1,5 +1,5 @@
 {
-    "name": "com.bastisapp.mobileapp3",
+    "name": "app.masterhub.clientev2",
     "displayName": "Master Hub App Version 2",
     "dependencies": {             	          	    	   
 	    "cordova-plugin-whitelist": "1.3.4",	    
@@ -32,13 +32,13 @@
           "cordova-plugin-camera": {},
           "cordova-plugin-device": {},
           "cordova-plugin-facebook4": {
-             "APP_ID": "2049491728632651",
-             "APP_NAME": "Karenderia"
+             "APP_ID": "247951822354120",
+             "APP_NAME": "Master Hub"
           },
           "cordova-plugin-file-transfer": {},
             "cordova-plugin-geolocation": {},
             "cordova-plugin-googleplus": {
-                "REVERSED_CLIENT_ID": "com.googleusercontent.apps.46158489047-3a9m0f5gg4p9aemeo3vmh971dphtc3dn",
+                "REVERSED_CLIENT_ID": "com.googleusercontent.apps.700766185398-f1vu9pld5pb1f1hnb5eoupidoeo6aukv",
                 "PLAY_SERVICES_VERSION": "11.0.1"
             },
             "cordova-plugin-inappbrowser": {},
