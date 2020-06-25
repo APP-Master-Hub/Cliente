@@ -35,7 +35,7 @@
     <gap:plugin name="phonegap-plugin-push" source="npm" spec="2.1.2"  />
     <gap:plugin name="cordova-plugin-ionic-webview" source="npm" spec="4.2.1"  />
    <!-- <gap:plugin name="cordova-plugin-enable-multidex" source="npm" spec="^0.2.0"  /> -->
-    <gap:plugin name="cordova-plugin-firebasex" source="npm" spec="9.1.0-cli"  />
+    <gap:plugin name="cordova-plugin-firebasex" source="npm"  />
             
     <gap:plugin spec="https://github.com/bastikikang/cordova-plugin-request-location-accuracy" source="git">    
       <variable name="PLAY_SERVICES_VERSION" value="11.0.1" /> 
