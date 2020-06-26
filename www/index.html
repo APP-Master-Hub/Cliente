@@ -32,8 +32,9 @@
   <script src="lib/leaflet/plugin/geocoder/mapbox-gl-geocoder.min.js"></script>
   <!--END MAPBOX-->
   
-       
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key="></script>
+<!-- Atualização Master Hub (Personalização) -->
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCjgZJOBT5K3Ms5ns20Q3lbopscSoGt3aI"></script>
+<!-- Fim da atualização -->
   
   <script src="lib/gmaps.js?version=1.0.0"></script>
   <script src="lib/jquery.translate.js?version=1.0.0"></script>
@@ -52,6 +53,9 @@
   <script src="js/config.js?version=1.0.0"></script>
   <script src="js/template.js?version=1.0.0"></script>  
   <script src="js/app.js?version=1.0.0"></script>
+<!-- Atualização Master Hub (Personalização) -->
+      <script src="js/masterhub.js?version=1.0.0"></script>
+<!-- Fim da atualização -->
   <script src="js/map-wrapper.js?version=1.0.0"></script>  
   <!--inventory-->
   <script src="js/inventory.js?version=1.0.0"></script>
@@ -389,20 +393,21 @@
   </ons-page>
 </template>
 
-
+<!-- Atualização Master Hub (Personalização) -->
 <template id="page_startup2.html">
-  <ons-page id="page_startup2" modifier="page_white" class="image_loaded" >
-      
-  
-   <input type="hidden" name="startup_banner_index" class="startup_banner_index" id="startup_banner_index" value="0">
-  
-   <div class="startup_carousel">  
-   </div> <!--startup_carousel-->
-    
-   <div class="startup_carousel_text"></div>
-   
+  <ons-page id="page_startup2" modifier="white_background" >
+
+  <ons-carousel id="startup_banner_carousel" class="startup_banner_carousel" 
+  fullscreen swipeable auto-scroll auto-scroll-ratio="0.1" overscrollable >  
+  </ons-carousel>
+  <div class="banner-paging startup_banner_paging is_rtl">
+    <ul class="dots2">
+    </ul>
+  </div>
+  <input type="hidden" name="startup_banner_index" class="startup_banner_index">  
   </ons-page>
 </template>
+<!-- Fim da atualização -->
 
 <template id="login.html">
    <ons-page id="login" modifier="page_white is_rtl" >
@@ -415,10 +420,14 @@
     <div class="stic-lateral-wrap">
 
       <ons-row>
-         <ons-col class="stic-half-col float-l" width="80%">
+<!-- Atualização Master Hub (Personalização) -->
+         <ons-col class="stic-half-col float-l" width="70%">
+<!-- Fim da atualização -->
             <h3 class="trn">Sign In</h3>
          </ons-col>
-         <ons-col class="stic-half-col float-r flex" width="55px">
+<!-- Atualização Master Hub (Personalização) -->
+         <ons-col class="stic-half-col float-r flex" width="30%">
+<!-- Fim da atualização -->
             <span class="stic-book stic-uppercase stic-login trn" onclick="replacePage('create_account.html')">Sign Up</span>
          </ons-col>  
       </ons-row>
@@ -444,7 +453,9 @@
     
    <ons-list-item>        
       <div class="center">
-        <ons-input type="password" name="password" id="password" required modifier="transparent" placeholder="Password" float ></ons-input>
+<!-- Atualização Master Hub (Personalização) -->
+        <ons-input type="password" name="password" id="password" class="password" required modifier="transparent" placeholder="Password" float ></ons-input>
+<!-- Fim da atualização -->
         <img class="stic-icon" src="lib/icons/lock.svg" onerror="this.src='lock.png'">
       </div>
     </ons-list-item>    
@@ -481,10 +492,12 @@
     <div class="stic-lateral-wrap">
 
       <ons-row>
-         <ons-col class="stic-half-col float-l" width="80%">
-            <h3 class="trn mr6">Register</h3>
+<!-- Atualização Master Hub (Personalização) -->
+         <ons-col class="stic-half-col float-l" width="70%">
+            <h3 class="trn mr6" style="margin-bottom: 0px; font-size: initial;" >Register to</h3>
          </ons-col>
-         <ons-col class="stic-half-col float-r flex" width="55px">
+         <ons-col class="stic-half-col float-r flex" width="30%">
+<!-- Fim da atualização -->
             <span class="stic-book stic-uppercase stic-login trn" onclick="replacePage('login.html')">Sign In</span>
          </ons-col>  
       </ons-row>
@@ -749,6 +762,7 @@
       <input type="hidden" name="mapbox_drag_map" class="mapbox_drag_map" id="mapbox_drag_map">
       <input type="hidden" name="mapbox_drag_end" class="mapbox_drag_end" id="mapbox_drag_end">
       <input type="hidden" name="street" id="street" class="street">
+      <input type="hidden" name="numero" id="numero" class="numero">
       <input type="hidden" name="city" id="city" class="city">
       <input type="hidden" name="state" id="state" class="state">
       <input type="hidden" name="zipcode" id="zipcode" class="zipcode">
@@ -809,7 +823,7 @@
 </ons-row>
 </div>
 
- <!--<div class="form_wrapper">  
+ <div class="form_wrapper">  
   <ons-list>  
     <ons-list-item>       
        <div class="center">         
@@ -817,6 +831,13 @@
        </div>
     </ons-list-item>
     
+<!-- Atualização Master Hub (Personalização) -->
+    <ons-list-item>       
+       <div class="center">         
+         <ons-input type="text" name="numero" id="numero" class="numero" required  modifier="transparent" placeholder="Numero" float></ons-input>
+       </div>
+    </ons-list-item>
+<!-- Fim da atualização -->
      <ons-list-item>       
        <div class="center">         
          <ons-input type="text" name="city" id="city" class="city" required  modifier="transparent" placeholder="City" float></ons-input>
@@ -842,8 +863,7 @@
     </ons-list-item>
            
   <ons-list>
-</div>-->
-<!-- form_wrapper-->   
+</div><!-- form_wrapper-->   
     
 </div> <!--search_wrap2-->
 
@@ -983,8 +1003,10 @@
               <br>
               <span class="min trn">A wide range of options for you</span>
            </ons-col>
-           <ons-col class="stic-half-col float-r" width="55px">
-              <span class="stic-book stic-uppercase trn" onclick="showPage('cuisine_list.html')">SEE ALL</span>
+<!-- Atualização Master Hub (Personalização) -->
+           <ons-col class="stic-half-col float-r" width="20%">
+              <span class="stic-book stic-uppercase-see-all trn" onclick="showPage('cuisine_list.html')">See All</span>
+<!-- Fim da atualização -->
            </ons-col>
          </div>
       </div>
@@ -1012,8 +1034,10 @@
               <br>
               <span class="min trn">The nearest restaurants to your location</span>
            </ons-col>
-           <ons-col class="stic-half-col float-r" width="55px">
-              <span class="stic-book stic-uppercase trn" onclick="showRestaurantList('byLatLong')">SEE ALL</span>
+<!-- Atualização Master Hub (Personalização) -->
+           <ons-col class="stic-half-col float-r" width="20%">
+              <span class="stic-book stic-uppercase-see-all trn" onclick="showRestaurantList('byLatLong')">See All</span>
+<!-- Fim da atualização -->
            </ons-col>
          </div>
       </div>
@@ -1056,8 +1080,10 @@
               <br>
               <span class="min trn">These ones have a special place in your heart</span>
            </ons-col>
-           <ons-col class="stic-half-col float-r" width="55px">
-              <span class="stic-book stic-uppercase trn" onclick="showRestaurantList('favorites')">SEE ALL</span>
+<!-- Atualização Master Hub (Personalização) -->
+           <ons-col class="stic-half-col float-r" width="20%">
+              <span class="stic-book stic-uppercase-see-all trn" onclick="showRestaurantList('favorites')">See All</span>
+<!-- Fim da atualização -->
            </ons-col>
          </div>
       </div>
@@ -1076,10 +1102,12 @@
            <ons-col class="stic-half-col float-l" width="80%">
               <span class="main trn">Special offers</span>
               <br>
-              <span class="min trn">Enjoy it before it's over</span>
+<!-- Atualização Master Hub (Personalização) -->
+              <span class="min trn">Enjoy it before its over</span>
            </ons-col>
-           <ons-col class="stic-half-col float-r" width="55px">
-              <span class="stic-book stic-uppercase trn" onclick="showRestaurantList('special_Offers')">SEE ALL</span>
+           <ons-col class="stic-half-col float-r" width="20%">
+              <span class="stic-book stic-uppercase-see-all trn" onclick="showRestaurantList('special_Offers')">See All</span>
+<!-- Fim da atualização -->
            </ons-col>
          </div>
       </div>
@@ -1099,8 +1127,10 @@
               <br>
               <span class="min trn">Our suggestions to you</span>
            </ons-col>
-           <ons-col class="stic-half-col float-r" width="55px">
-              <span class="stic-book stic-uppercase trn" onclick="showRestaurantList('featuredMerchant')">SEE ALL</span>
+<!-- Atualização Master Hub (Personalização) -->
+           <ons-col class="stic-half-col float-r" width="20%">
+              <span class="stic-book stic-uppercase-see-all trn" onclick="showRestaurantList('featuredMerchant')">See All</span>
+<!-- Fim da atualização -->
            </ons-col>
          </div>
       </div>
@@ -1121,8 +1151,10 @@
               <br>
               <span class="min trn">Choose what you wish</span>
            </ons-col>
-           <ons-col class="stic-half-col float-r" width="55px">
-              <span class="stic-book stic-uppercase trn" onclick="showRestaurantList('allMerchant')">SEE ALL</span>
+<!-- Atualização Master Hub (Personalização) -->
+           <ons-col class="stic-half-col float-r" width="20%">
+              <span class="stic-book stic-uppercase-see-all trn" onclick="showRestaurantList('allMerchant')">See All</span>
+<!-- Fim da atualização -->
            </ons-col>
          </div>
       </div>
@@ -1492,7 +1524,9 @@
 <span class="trn">Pull to refresh</span>
 </ons-pull-hook>
 
-<ons-back-button modifier="fixed_back_button button_white">Back</ons-back-button> 
+<!-- Atualização Master Hub (Personalização) -->
+<ons-back-button modifier="fixed_back_button button_white" style="display: inline-block;background: linear-gradient(-90deg, #ffffff00 80%, #000000b5 100%);width: -webkit-fill-available;">Back</ons-back-button> 
+<!-- Fim da atualização -->
 
 <input type="hidden" name="merchant_open_status" id="merchant_open_status" class="merchant_open_status">
 <input type="hidden" name="merchant_id" id="merchant_id" class="merchant_id">
@@ -1735,6 +1769,11 @@
 <input type="hidden" name="delivery_time" id="delivery_time" class="delivery_time">
 
 <input type="hidden" name="delivery_address" id="delivery_address" class="delivery_address">
+<!-- Atualização Master Hub (Personalização) -->
+<input type="hidden" name="coleta_address" id="coleta_address" class="coleta_address">
+<input type="hidden" name="pre_coleta_address" id="pre_coleta_address" class="pre_coleta_address">
+<input type="hidden" name="retorno_address" id="retorno_address" class="retorno_address">
+<!-- Fim da atualização -->
 <input type="hidden" name="cart_total_value" id="cart_total_value" class="cart_total_value">
 <input type="hidden" name="cart_total_value_raw" id="cart_total_value_raw" class="cart_total_value_raw">
 
@@ -1812,7 +1851,9 @@
 <template id="item_details.html" >  
   <ons-page id="item_details" modifier="page_white is_rtl" class="image_loaded" >    
   
-  <ons-back-button modifier="fixed_back_button button_white">Back</ons-back-button> 
+<!-- Atualização Master Hub (Personalização) -->
+  <ons-back-button modifier="fixed_back_button button_white" style="display: inline-block;background: linear-gradient(-90deg, #ffffff00 80%, #000000b5 100%);width: -webkit-fill-available;">Back</ons-back-button> 
+<!-- Fim da atualização -->
     
   <form id="frm_item" class="frm_item" method="POST">
   <input type="hidden" name="category_id" id="category_id" class="category_id">
@@ -1937,9 +1978,11 @@
   <input type="hidden" name="mapbox_drag_map" class="mapbox_drag_map" id="mapbox_drag_map">
   <input type="hidden" name="mapbox_drag_end" class="mapbox_drag_end" id="mapbox_drag_end">
   
-  <div class="header_grey text-right">
-    <ons-button class="pd0" id="location_change" modifier="quiet button_small trn" onclick="showPage('map_enter_address.html')" >
-      <span class="trn">CHANGE</span>
+<!-- Atualização Master Hub (Personalização) -->
+<div class="botao-mapa">
+<ons-button id="location_change" class="noborder botao-do-mapa" modifier="quiet button_small trn" onclick="map_setEnderecoValue()" >
+<span class="trn">Aplicar Endereco do Mapa</span>
+<!-- Fim da atualização -->
     </ons-button>
   </div>
   
@@ -1955,6 +1998,15 @@
        </div>
     </ons-list-item>
     
+<!-- Atualização Master Hub (Personalização) -->
+    <ons-list-item>       
+       <div class="center">         
+         <ons-input type="text" name="numero" id="numero" class="numero" required  modifier="transparent" placeholder="Numero" float>
+         </ons-input>
+         <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+       </div>
+    </ons-list-item>
+<!-- Fim da atualização -->
     <ons-list-item>       
        <div class="center">         
          <ons-input type="text" name="city" id="city" class="city" required  modifier="transparent" placeholder="City" float>
@@ -1986,9 +2038,11 @@
     
     <ons-list-item>       
        <div class="center">         
-         <ons-input type="text" name="location_name" id="location_name" class="location_name" required  modifier="transparent" placeholder="Floor/unit/Room #" float>
+<!-- Atualização Master Hub (Personalização) -->
+         <ons-input type="text" name="delivery_instruction"  class="delivery_instruction" modifier="transparent" placeholder="Delivery instructions" float>
          </ons-input>
-         <img class="stic-icon" src="lib/icons/booking-history.svg" onerror="this.src='booking-history.png'">
+         <img class="stic-icon" src="lib/icons/edit.svg" onerror="this.src='edit.png'">
+<!-- Fim da atualização -->
        </div>
     </ons-list-item>
     
@@ -2002,9 +2056,11 @@
     
    <ons-list-item>       
      <div class="center">         
-         <ons-input type="text" name="delivery_instruction"  class="delivery_instruction" modifier="transparent" placeholder="Delivery instructions" float>
+<!-- Atualização Master Hub (Personalização) -->
+         <ons-input type="text" name="location_name" id="location_name" class="location_name" required  modifier="transparent" placeholder="Floor/unit/Room #" float>
          </ons-input>
-         <img class="stic-icon" src="lib/icons/edit.svg" onerror="this.src='edit.png'">
+         <img class="stic-icon" src="lib/icons/booking-history.svg" onerror="this.src='booking-history.png'">
+<!-- Fim da atualização -->
        </div>
     </ons-list-item> 
     
@@ -2092,6 +2148,181 @@
 </ons-page>
 </template>
 
+<!-- Atualização Master Hub (Personalização) -->
+<template id="coleta_form_select.html">
+  <ons-page id="coleta_form_select" modifier="is_rtl" >  
+
+     <ons-toolbar modifier="no_shadow" >
+	  <div class="left">
+	    <ons-back-button>Back</ons-back-button>
+	  </div>
+	  <div class="center">
+	    <!-- <span class="trn">Select address</span> -->
+	  </div>
+  </ons-toolbar>
+
+  <div class="cream_header">
+    <div class="stic-lateral-wrap">
+      <h3 class="trn">Coleta Address</h3>
+      <p class="trn small">What address would you like to receive?</p>
+    </div>
+  </div>
+  
+  <form id="frm_coleta_form_select" class="frm_coleta_form_select" method="POST">
+  <div class="form_wrapper">
+      <ons-list>
+      
+      <ons-list-item>
+        <div class="coleta_book_wrap stic-lateral-wrap"></div>
+      </ons-list-item>     
+      
+      <ons-list-item>       
+       <div class="center">         
+         <ons-input type="text" name="contact_phone" id="contact_phone" class="contact_phone" required modifier="transparent" placeholder="Contact Number" float onclick="showPage('enter_phone.html')" onfocus="showPage('enter_phone.html')"></ons-input>
+         <img class="stic-icon" src="lib/icons/mobile.svg" onerror="this.src='mobile.png'">
+       </div>
+      </ons-list-item>
+      
+       <ons-list-item>       
+       <div class="center">         
+           <ons-input type="text" name="delivery_instruction"  class="delivery_instruction" modifier="transparent" placeholder="Delivery instructions" float></ons-input>
+           <img class="stic-icon" src="lib/icons/edit.svg" onerror="this.src='edit.png'">
+       </div>
+       </ons-list-item> 
+    
+      </ons-list>
+  </div> <!--form_wrapper-->
+  </form>
+
+   <ons-button class="stic-grey-btn" modifier="quiet to_text_orange margin_auto" onclick="replacePage('address_form.html')"  >
+     <span class="trn">Add New Address</span>
+   </ons-button>
+ 
+  <ons-bottom-toolbar modifier="transparent" >    
+       <ons-button modifier="large to_orange no_shadow" onclick="setColetaBook()" >     
+         <span class="trn">Apply</span>
+       </ons-button>           
+  </ons-bottom-toolbar>
+  
+</ons-page>
+</template>
+	  
+<template id="pre_coleta_form_select.html">
+  <ons-page id="pre_coleta_form_select" modifier="is_rtl" >  
+
+     <ons-toolbar modifier="no_shadow" >
+	  <div class="left">
+	    <ons-back-button>Back</ons-back-button>
+	  </div>
+	  <div class="center">
+	    <!-- <span class="trn">Select address</span> -->
+	  </div>
+  </ons-toolbar>
+
+  <div class="cream_header">
+    <div class="stic-lateral-wrap">
+      <h3 class="trn">Pre Coleta Address</h3>
+      <p class="trn small">What address would you like to receive?</p>
+    </div>
+  </div>
+  
+  <form id="frm_pre_coleta_form_select" class="frm_pre_coleta_form_select" method="POST">
+  <div class="form_wrapper">
+      <ons-list>
+      
+      <ons-list-item>
+        <div class="coleta_book_wrap stic-lateral-wrap"></div>
+      </ons-list-item>     
+      
+      <ons-list-item>       
+       <div class="center">         
+         <ons-input type="text" name="contact_phone" id="contact_phone" class="contact_phone" required modifier="transparent" placeholder="Contact Number" float onclick="showPage('enter_phone.html')" onfocus="showPage('enter_phone.html')"></ons-input>
+         <img class="stic-icon" src="lib/icons/mobile.svg" onerror="this.src='mobile.png'">
+       </div>
+      </ons-list-item>
+      
+       <ons-list-item>       
+       <div class="center">         
+           <ons-input type="text" name="delivery_instruction"  class="delivery_instruction" modifier="transparent" placeholder="Delivery instructions" float></ons-input>
+           <img class="stic-icon" src="lib/icons/edit.svg" onerror="this.src='edit.png'">
+       </div>
+       </ons-list-item> 
+    
+      </ons-list>
+  </div> <!--form_wrapper-->
+  </form>
+
+   <ons-button class="stic-grey-btn" modifier="quiet to_text_orange margin_auto" onclick="replacePage('address_form.html')"  >
+     <span class="trn">Add New Address</span>
+   </ons-button>
+ 
+  <ons-bottom-toolbar modifier="transparent" >    
+       <ons-button modifier="large to_orange no_shadow" onclick="setPreColetaBook()" >     
+         <span class="trn">Apply</span>
+       </ons-button>           
+  </ons-bottom-toolbar>
+  
+</ons-page>
+</template>
+	  
+<template id="retorno_form_select.html">
+  <ons-page id="retorno_form_select" modifier="is_rtl" >  
+
+     <ons-toolbar modifier="no_shadow" >
+	  <div class="left">
+	    <ons-back-button>Back</ons-back-button>
+	  </div>
+	  <div class="center">
+	    <!-- <span class="trn">Select address</span> -->
+	  </div>
+  </ons-toolbar>
+
+  <div class="cream_header">
+    <div class="stic-lateral-wrap">
+      <h3 class="trn">Retorno Address</h3>
+      <p class="trn small">What address would you like to receive?</p>
+    </div>
+  </div>
+  
+  <form id="frm_retorno_form_select" class="frm_retorno_form_select" method="POST">
+  <div class="form_wrapper">
+      <ons-list>
+      
+      <ons-list-item>
+        <div class="retorno_book_wrap stic-lateral-wrap"></div>
+      </ons-list-item>     
+      
+      <ons-list-item>       
+       <div class="center">         
+         <ons-input type="text" name="contact_phone" id="contact_phone" class="contact_phone" required modifier="transparent" placeholder="Contact Number" float onclick="showPage('enter_phone.html')" onfocus="showPage('enter_phone.html')"></ons-input>
+         <img class="stic-icon" src="lib/icons/mobile.svg" onerror="this.src='mobile.png'">
+       </div>
+      </ons-list-item>
+      
+       <ons-list-item>       
+       <div class="center">         
+           <ons-input type="text" name="delivery_instruction"  class="delivery_instruction" modifier="transparent" placeholder="Delivery instructions" float></ons-input>
+           <img class="stic-icon" src="lib/icons/edit.svg" onerror="this.src='edit.png'">
+       </div>
+       </ons-list-item> 
+    
+      </ons-list>
+  </div> <!--form_wrapper-->
+  </form>
+
+   <ons-button class="stic-grey-btn" modifier="quiet to_text_orange margin_auto" onclick="replacePage('address_form.html')"  >
+     <span class="trn">Add New Address</span>
+   </ons-button>
+ 
+  <ons-bottom-toolbar modifier="transparent" >    
+       <ons-button modifier="large to_orange no_shadow" onclick="setRetornoBook()" >     
+         <span class="trn">Apply</span>
+       </ons-button>           
+  </ons-bottom-toolbar>
+  
+</ons-page>
+</template>
+<!-- Fim da atualização -->
 
 <template id="payment_option.html">
   <ons-page id="payment_option" modifier="page_white is_rtl" >  
@@ -3293,7 +3524,13 @@
          <ons-input type="text" name="street" id="street" class="street" required  modifier="transparent" placeholder="Street" float></ons-input>
        </div>
     </ons-list-item>
-    
+<!-- Atualização Master Hub (Personalização) -->
+    <ons-list-item>       
+       <div class="center">         
+         <ons-input type="text" name="numero" id="numero" class="numero" required  modifier="transparent" placeholder="Numero" float></ons-input>
+       </div>
+    </ons-list-item>
+<!-- Fim da atualização -->
     <ons-list-item>       
        <div class="center">         
          <ons-input type="text" name="city" id="city" class="city" required  modifier="transparent" placeholder="City" float></ons-input>
@@ -3468,7 +3705,9 @@
   </div>
 </ons-toolbar>
 
-<div class="search_wrapper search_item_wrap" id="stic_search">
+<!-- Atualização Master Hub (Personalização) -->
+<div class="search_wrapper search_item_wrap iphonex_margin" id="stic_search">
+<!-- Fim da atualização -->
   <ons-search-input id="search_restaurant_name" class="search_restaurant_name" placeholder="Search for restaurant, cuisine or food"></ons-search-input>
   <div class="stic-icon">
     <img src="lib/icons/search.svg" onerror="this.src='search.png'">
@@ -4367,7 +4606,9 @@
    </div>  <!--content_wrapper-->      
   </div> <!--search_wrapper-->  
 
-   <ons-list id="location_state_result" modifier="list_small is_rtl">     
+<!-- Atualização Master Hub (Personalização) -->
+   <ons-list id="location_state_result" modifier="list_small is_rtl"></ons-list>     
+<!-- Fim da atualização -->
  
   <div class="location_state_result_loader bottom_loader bottom_gap resp_small text_left"></div>
   
@@ -4412,7 +4653,9 @@
    </div>  <!--content_wrapper-->      
   </div> <!--search_wrapper-->  
 
-   <ons-list id="location_city_result" modifier="list_small is_rtl">     
+<!-- Atualização Master Hub (Personalização) -->
+   <ons-list id="location_city_result" modifier="list_small is_rtl"></ons-list>     
+<!-- Fim da atualização -->
  
   <div class="location_city_result_loader bottom_loader bottom_gap resp_small text_left"></div>
   
@@ -4458,7 +4701,9 @@
    </div>  <!--content_wrapper-->      
   </div> <!--search_wrapper-->  
 
-   <ons-list id="location_area_result" modifier="list_small is_rtl">     
+<!-- Atualização Master Hub (Personalização) -->
+   <ons-list id="location_area_result" modifier="list_small is_rtl"></ons-list>     
+<!-- Fim da atualização -->
 
   <div class="location_area_result_loader bottom_loader bottom_gap resp_small text_left"></div>
 
@@ -4472,9 +4717,11 @@
 <ons-back-button modifier="fixed_back_button">Back</ons-back-button> 
 <div class="map_half" id="map_address"></div>
 
-  <div class="header_grey">
-    <ons-button id="location_change" modifier="quiet button_small trn" onclick="showPage('map_enter_address.html')" >
-    <span class="trn">CHANGE</span>
+<!-- Atualização Master Hub (Personalização) -->
+<div class="botao-mapa">
+<ons-button id="location_change" class="noborder botao-do-mapa" modifier="quiet button_small trn" onclick="map_setEnderecoValue()" >
+<span class="trn">Aplicar Endereco do Mapa</span>
+<!-- Fim da atualização -->
     </ons-button>
   </div>
   
@@ -4493,44 +4740,60 @@
   
   <div class="form_wrapper">
   
-   <ons-list>
-   
+<!-- Atualização Master Hub (Personalização) -->
+<ons-list modifier="field_list is_rtl">     
+	<ons-list-item style="margin-top: 5px;">
+     <ons-input type="text" id="cep" name="zipcode"  class="stic-field full_width zipcode" modifier="underbar" placeholder="Zip Code" style="margin: 0 0px;" float onblur="pesquisacep(this.value);"></ons-input>
+	 <div style="padding: 0px 0px 0px 0px; font-size: 10px; margin: 2px 5px 15px 5px; text-align: center; color: darkviolet; font-family: GoogleSans;" class="trn">Digite o CEP para preencher automaticamente o endereco.</div>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+	</ons-list-item>	
+<ons-row class="stic-tips-row" vertical-align="center"><ons-col class="left">
+	<ons-list-item style="width: 245px;padding-right: 0px;">
+	  <ons-input type="text" name="street" id="street" required class="full_width street" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Street" float></ons-input>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'" style="margin-right: -22px;">
+    </ons-list-item>
+</ons-col>
+<ons-col class="right">
      <ons-list-item>       
-       <div class="center">         
-         <ons-input type="text" name="street" id="street" class="street" required  modifier="transparent" placeholder="Street" float></ons-input>
-       </div>
+	  <ons-input type="text" name="numero" id="numero" required class="full_width numero" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Numero" float></ons-input>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item>
+</ons-col></ons-row>
+    
+    <ons-list-item>       
+	  <ons-input type="text" name="area_name" id="area_name" required class="full_width area_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Distric/Area/neighborhood" float onclick="showLocationArea();"></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+	</ons-list-item>	
+	
+<ons-row class="stic-tips-row" vertical-align="center"><ons-col class="left">
+	<ons-list-item style="width: 245px;padding-right: 0px;">
+	  <ons-input type="text" name="city_name" id="city_name" required class="full_width city_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="City" float onclick="showLocationCity();"></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'" style="margin-right: -22px;">
+    </ons-list-item>
+</ons-col>
+<ons-col class="right">
+    <ons-list-item>       
+	  <ons-input type="text" name="state_name" id="state_name" required class="full_width state_name" style="margin: 0 0px;"
+	   modifier="underbar" placeholder="State/Region" float onclick="showPage('location_state.html','none',{'address_book':1})"></ons-input>
+     <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item>
+</ons-col></ons-row>
+    
+    <ons-list-item>       
+	  <ons-input type="text" name="delivery_instruction"  class="full_width delivery_instruction" modifier="underbar" placeholder="Delivery instructions" style="margin: 0 0px;" float></ons-input>   
+      <img class="stic-icon" src="lib/icons/edit.svg" onerror="this.src='pin.png'">
     </ons-list-item>
     
     <ons-list-item>       
-       <div class="center">         
-         <ons-input type="text" name="state_name" id="state_name" class="state_name" required  modifier="transparent" 
-         onclick="showPage('location_state.html','none',{'address_book':1})"
-           float></ons-input>
-       </div>
+	  <ons-input type="text" name="location_name" id="location_name" required class="full_width location_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Floor/unit/Room #" float></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
     </ons-list-item>
-    
-    <ons-list-item>       
-       <div class="center">         
-         <ons-input type="text" name="city_name" id="city_name" class="city_name" required  modifier="transparent" 
-         onclick="showLocationCity();";
-          float></ons-input>
-       </div>
-    </ons-list-item>
-    
-    <ons-list-item>       
-       <div class="center">         
-         <ons-input type="text" name="area_name" id="area_name" class="area_name" required  modifier="transparent"
-         onclick="showLocationArea();"
-          float></ons-input>
-       </div>
-    </ons-list-item>
-    
-    <ons-list-item>       
-       <div class="center">         
-         <ons-input type="text" name="location_name" id="location_name" class="location_name" required  modifier="transparent" placeholder="Floor/unit/Room #" float></ons-input>
-       </div>
-    </ons-list-item>
-    
+<!-- Fim da atualização -->
     
    <!--<ons-list-item>       
        <div class="center">         
@@ -4573,9 +4836,11 @@
 <ons-back-button modifier="fixed_back_button">Back</ons-back-button> 
 <div class="map_half" id="map_address"></div>
 
-  <div class="header_grey">
-    <ons-button id="location_change" modifier="quiet button_small trn" onclick="showPage('map_enter_address.html')" >
-    <span class="trn">CHANGE</span>
+<!-- Atualização Master Hub (Personalização) -->
+<div class="botao-mapa">
+<ons-button id="location_change" class="noborder botao-do-mapa" modifier="quiet button_small trn" onclick="map_setEnderecoValue()" >
+<span class="trn">Aplicar Endereco do Mapa</span>
+<!-- Fim da atualização -->
     </ons-button>
   </div>
   
@@ -4593,58 +4858,65 @@
   
   <div class="form_wrapper">
   
-   <ons-list>
-   
+<!-- Atualização Master Hub (Personalização) -->
+<ons-list modifier="field_list">     
+	<ons-list-item style="margin-top: 5px;">
+     <ons-input type="text" id="cep" name="zipcode"  class="stic-field full_width zipcode" modifier="underbar" placeholder="Zip Code" float onblur="pesquisacep(this.value);" style="margin: 0 0px;"></ons-input>
+	 <div style="padding: 0px 0px 0px 0px; font-size: 10px; margin: 2px 5px 15px 5px; text-align: center; color: darkviolet; font-family: GoogleSans;" class="trn">Digite o CEP para preencher automaticamente o endereco.</div>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item>
+<ons-row class="stic-tips-row" vertical-align="center"><ons-col class="left">
+	<ons-list-item style="width: 245px;padding-right: 0px;">
+	  <ons-input type="text" name="street" id="street" required class="full_width street"  style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Street" float></ons-input>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'" style="margin-right: -22px;">
+    </ons-list-item>
+</ons-col>
+<ons-col class="right">
+    <ons-list-item>       
+	  <ons-input type="text" name="numero" id="numero" required class="full_width numero" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Numero" float></ons-input>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item>
+</ons-col></ons-row>
+    
+    <ons-list-item>       
+	  <ons-input type="text" name="area_name" id="area_name" required class="full_width area_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Distric/Area/neighborhood" float onclick="showLocationArea();"></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+	</ons-list-item>	
+	
+<ons-row class="stic-tips-row" vertical-align="center"><ons-col class="left">
+	<ons-list-item style="width: 245px;padding-right: 0px;">
+	  <ons-input type="text" name="city_name" id="city_name" required class="full_width city_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="City" float onclick="showLocationCity();"></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'" style="margin-right: -22px;">
+    </ons-list-item>
+</ons-col>
+<ons-col class="right">
+    <ons-list-item>       
+	  <ons-input type="text" name="state_name" id="state_name" required class="full_width state_name" style="margin: 0 0px;"
+	   modifier="underbar" placeholder="State/Region" float onclick="showPage('location_state.html','none',{'address_book':1})"></ons-input>
+     <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item>
+</ons-col></ons-row>
+    
+    <ons-list-item>       
+    <ons-input type="text" name="delivery_instruction"  class="full_width delivery_instruction" modifier="underbar" placeholder="Delivery instructions" style="margin: 0 0px;" float></ons-input>   
+    <img class="stic-icon" src="lib/icons/edit.svg" onerror="this.src='edit.png'">
+    </ons-list-item>
+    
      <ons-list-item>       
-       <div class="center">         
-         <ons-input type="text" name="street" id="street" class="street" required  modifier="transparent" placeholder="Street" float></ons-input>
-       </div>
-    </ons-list-item>
-    
-    <ons-list-item>       
-       <div class="center">         
-         <ons-input type="text" name="state_name" id="state_name" class="state_name" required  modifier="transparent" 
-         onclick="showPage('location_state.html','none',{'address_book':1})"
-           float></ons-input>
-       </div>
-    </ons-list-item>
-    
-    <ons-list-item>       
-       <div class="center">         
-         <ons-input type="text" name="city_name" id="city_name" class="city_name" required  modifier="transparent" 
-         onclick="showLocationCity();";
-          float></ons-input>
-       </div>
-    </ons-list-item>
-    
-    <ons-list-item>       
-       <div class="center">         
-         <ons-input type="text" name="area_name" id="area_name" class="area_name" required  modifier="transparent"
-         onclick="showLocationArea();"
-          float></ons-input>
-       </div>
-    </ons-list-item>
-    
-    <ons-list-item>       
-       <div class="center">         
-         <ons-input type="text" name="location_name" id="location_name" class="location_name" required  modifier="transparent" placeholder="Floor/unit/Room #" float></ons-input>
-       </div>
-    </ons-list-item>
-    
-     <ons-list-item>       
-       <div class="center">         
-         <ons-input type="text" name="contact_phone" id="contact_phone" class="contact_phone" required 
-          modifier="transparent" placeholder="Contact Number" float
-          onclick="showPage('enter_phone.html')" onfocus="showPage('enter_phone.html')"
-          ></ons-input>
-       </div>
+	    <ons-input type="text" name="contact_phone" required  class="full_width contact_phone" modifier="underbar" placeholder="Contact number"  style="margin: 0 0px;" float onclick="showPage('enter_phone.html')" onfocus="showPage('enter_phone.html')" ></ons-input>
+      <img class="stic-icon" src="lib/icons/mobile.svg" onerror="this.src='mobile.png'">
     </ons-list-item>
     
     
      <ons-list-item>       
-       <div class="center">         
-           <ons-input type="text" name="delivery_instruction"  class="delivery_instruction" modifier="transparent" placeholder="Delivery instructions" float></ons-input>
-       </div>
+	  <ons-input type="text" name="location_name" id="location_name" required class="full_width location_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Floor/unit/Room #" float></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+<!-- Fim da atualização -->
     </ons-list-item> 
     
     <ons-list-item>       
@@ -4729,8 +5001,510 @@
   
 </ons-page>
 </template>
+<!-- Atualização Master Hub (Personalização) -->
+<template id="coleta_form_location.html">
+<ons-page id="coleta_form_location" modifier="is_rtl"   >  
+
+<ons-back-button modifier="fixed_back_button">Back</ons-back-button> 
+<div class="map_half" id="map_address"></div>
+
+<div class="botao-mapa">
+<ons-button id="location_change" class="noborder botao-do-mapa" modifier="quiet button_small trn" onclick="map_setEnderecoValue()" >
+<span class="trn">Aplicar Endereco do Mapa</span>
+    </ons-button>
+  </div>
+  
+  
+<form method="POST" id="frm_coleta_form_location" class="frm_coleta_form_location">   
+  <input type="hidden" name="lat" id="lat" class="lat">
+  <input type="hidden" name="lng" id="lng" class="lng">
+  
+  <input type="hidden" name="mapbox_drag_map" class="mapbox_drag_map" id="mapbox_drag_map">
+  <input type="hidden" name="mapbox_drag_end" class="mapbox_drag_end" id="mapbox_drag_end">
+  
+  <input type="hidden" name="state_id" class="state_id" id="state_id">
+  <input type="hidden" name="city_id" class="city_id" id="city_id">
+  <input type="hidden" name="area_id" class="area_id" id="area_id">
+  
+  <div class="form_wrapper">
+  
+<ons-list modifier="field_list">     
+	<ons-list-item style="margin-top: 5px;">
+     <ons-input type="text" id="cep" name="zipcode"  class="stic-field full_width zipcode" modifier="underbar" placeholder="Zip Code" float onblur="pesquisacep(this.value);" style="margin: 0 0px;"></ons-input>
+	 <div style="padding: 0px 0px 0px 0px; font-size: 10px; margin: 2px 5px 15px 5px; text-align: center; color: darkviolet; font-family: GoogleSans;" class="trn">Digite o CEP para preencher automaticamente o endereco.</div>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item>
+<ons-row class="stic-tips-row" vertical-align="center"><ons-col class="left">
+	<ons-list-item style="width: 245px;padding-right: 0px;">
+	  <ons-input type="text" name="street" id="street" required class="full_width street"  style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Street" float></ons-input>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'" style="margin-right: -22px;">
+    </ons-list-item>
+</ons-col>
+<ons-col class="right">
+    <ons-list-item>       
+	  <ons-input type="text" name="numero" id="numero" required class="full_width numero" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Numero" float></ons-input>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item>
+</ons-col></ons-row>
+    
+    <ons-list-item>       
+	  <ons-input type="text" name="area_name" id="area_name" required class="full_width area_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Distric/Area/neighborhood" float onclick="showLocationArea();"></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+	</ons-list-item>	
+	
+<ons-row class="stic-tips-row" vertical-align="center"><ons-col class="left">
+	<ons-list-item style="width: 245px;padding-right: 0px;">
+	  <ons-input type="text" name="city_name" id="city_name" required class="full_width city_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="City" float onclick="showLocationCity();"></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'" style="margin-right: -22px;">
+    </ons-list-item>
+</ons-col>
+<ons-col class="right">
+    <ons-list-item>       
+	  <ons-input type="text" name="state_name" id="state_name" required class="full_width state_name" style="margin: 0 0px;"
+	   modifier="underbar" placeholder="State/Region" float onclick="showPage('location_state.html','none',{'address_book':1})"></ons-input>
+     <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item>
+</ons-col></ons-row>
+    
+    <ons-list-item>       
+    <ons-input type="text" name="delivery_instruction"  class="full_width delivery_instruction" modifier="underbar" placeholder="Delivery instructions" style="margin: 0 0px;" float></ons-input>   
+    <img class="stic-icon" src="lib/icons/edit.svg" onerror="this.src='edit.png'">
+    </ons-list-item>
+    
+     <ons-list-item>       
+	    <ons-input type="text" name="contact_phone" required  class="full_width contact_phone" modifier="underbar" placeholder="Contact number"  style="margin: 0 0px;" float onclick="showPage('enter_phone.html')" onfocus="showPage('enter_phone.html')" ></ons-input>
+      <img class="stic-icon" src="lib/icons/mobile.svg" onerror="this.src='mobile.png'">
+    </ons-list-item>
+    
+    
+     <ons-list-item>       
+	  <ons-input type="text" name="location_name" id="location_name" required class="full_width location_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Floor/unit/Room #" float></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item> 
+    
+    <ons-list-item>       
+       <label class="left">
+        <ons-checkbox name="save_address" class="save_address"  input-id="save_address" value="1"></ons-checkbox>
+      </label>
+      <label for="save_address" class="center">
+        <span class="trn">Save to my address book</span> 
+      </label>
+    </ons-list-item> 
+    
+   </ons-list>
+  
+  </div> 
+  <!--form_wrapper-->
+
+ </form> 
+
+<div class="bottom_gap"></div>
+
+<ons-bottom-toolbar modifier="transparent" >    
+   <ons-button modifier="large to_orange no_shadow" onclick="setColetaLocation()" >     
+     <span class="trn">APPLY</span>
+   </ons-button>           
+</ons-bottom-toolbar>  
+
+</ons-page>
+</template>
 
 
+<template id="coleta_form_select_location.html">
+  <ons-page id="coleta_form_select_location" modifier="" >  
+
+     <ons-toolbar modifier="no_shadow" >
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">
+      <span class="trn">Select address</span>
+    </div>
+  </ons-toolbar>
+  
+  
+  
+  <form id="frm_coleta_form_select_location" class="frm_coleta_form_select_location" method="POST">
+  <div class="form_wrapper">
+      <ons-list>
+      
+      <ons-list-item>
+        <div class="coleta_book_wrap"></div>
+      </ons-list-item>     
+      
+      <ons-list-item>       
+       <div class="center">         
+         <ons-input type="text" name="contact_phone" id="contact_phone" class="contact_phone" required 
+          modifier="transparent" placeholder="Contact Number" float
+          onclick="showPage('enter_phone.html')" onfocus="showPage('enter_phone.html')"
+          ></ons-input>       
+       </div>
+      </ons-list-item>
+      
+       <ons-list-item>       
+       <div class="center">         
+           <ons-input type="text" name="delivery_instruction"  class="delivery_instruction"
+            modifier="transparent" placeholder="Delivery instructions" float></ons-input>
+       </div>
+       </ons-list-item> 
+    
+      </ons-list>
+  </div> <!--form_wrapper-->
+  </form>
+  
+   <ons-fab position="bottom right" modifier="mini">
+    <ons-icon icon="md-plus" class="color_green" onclick="replacePage('coleta_form_location.html');"></ons-icon>
+   </ons-fab>
+ 
+  <ons-bottom-toolbar modifier="transparent" >    
+       <ons-button modifier="large to_orange no_shadow" onclick="setColetaBookLocation()" >     
+         <span class="trn">APPLY</span>
+       </ons-button>           
+  </ons-bottom-toolbar>
+  
+</ons-page>
+</template>
+	
+<template id="pre_coleta_form_location.html">
+<ons-page id="pre_coleta_form_location" modifier="is_rtl"   >  
+
+<ons-back-button modifier="fixed_back_button">Back</ons-back-button> 
+<div class="map_half" id="map_address"></div>
+
+<div class="botao-mapa">
+<ons-button id="location_change" class="noborder botao-do-mapa" modifier="quiet button_small trn" onclick="map_setEnderecoValue()" >
+<span class="trn">Aplicar Endereco do Mapa</span>
+    </ons-button>
+  </div>
+  
+<form method="POST" id="frm_pre_coleta_form_location" class="frm_pre_coleta_form_location">   
+  <input type="hidden" name="lat" id="lat" class="lat">
+  <input type="hidden" name="lng" id="lng" class="lng">
+  
+  <input type="hidden" name="mapbox_drag_map" class="mapbox_drag_map" id="mapbox_drag_map">
+  <input type="hidden" name="mapbox_drag_end" class="mapbox_drag_end" id="mapbox_drag_end">
+  
+  <input type="hidden" name="state_id" class="state_id" id="state_id">
+  <input type="hidden" name="city_id" class="city_id" id="city_id">
+  <input type="hidden" name="area_id" class="area_id" id="area_id">
+  
+  <div class="form_wrapper">
+  
+<ons-list modifier="field_list">     
+	<ons-list-item style="margin-top: 5px;">
+     <ons-input type="text" id="cep" name="zipcode"  class="stic-field full_width zipcode" modifier="underbar" placeholder="Zip Code" float onblur="pesquisacep(this.value);" style="margin: 0 0px;"></ons-input>
+	 <div style="padding: 0px 0px 0px 0px; font-size: 10px; margin: 2px 5px 15px 5px; text-align: center; color: darkviolet; font-family: GoogleSans;" class="trn">Digite o CEP para preencher automaticamente o endereco.</div>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item>
+<ons-row class="stic-tips-row" vertical-align="center"><ons-col class="left">
+	<ons-list-item style="width: 245px;padding-right: 0px;">
+	  <ons-input type="text" name="street" id="street" required class="full_width street"  style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Street" float></ons-input>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'" style="margin-right: -22px;">
+    </ons-list-item>
+</ons-col>
+<ons-col class="right">
+    <ons-list-item>       
+	  <ons-input type="text" name="numero" id="numero" required class="full_width numero" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Numero" float></ons-input>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item>
+</ons-col></ons-row>
+    
+    <ons-list-item>       
+	  <ons-input type="text" name="area_name" id="area_name" required class="full_width area_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Distric/Area/neighborhood" float onclick="showLocationArea();"></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+	</ons-list-item>	
+	
+<ons-row class="stic-tips-row" vertical-align="center"><ons-col class="left">
+	<ons-list-item style="width: 245px;padding-right: 0px;">
+	  <ons-input type="text" name="city_name" id="city_name" required class="full_width city_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="City" float onclick="showLocationCity();"></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'" style="margin-right: -22px;">
+    </ons-list-item>
+</ons-col>
+<ons-col class="right">
+    <ons-list-item>       
+	  <ons-input type="text" name="state_name" id="state_name" required class="full_width state_name" style="margin: 0 0px;"
+	   modifier="underbar" placeholder="State/Region" float onclick="showPage('location_state.html','none',{'address_book':1})"></ons-input>
+     <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item>
+</ons-col></ons-row>
+    
+    <ons-list-item>       
+    <ons-input type="text" name="delivery_instruction"  class="full_width delivery_instruction" modifier="underbar" placeholder="Delivery instructions" style="margin: 0 0px;" float></ons-input>   
+    <img class="stic-icon" src="lib/icons/edit.svg" onerror="this.src='edit.png'">
+    </ons-list-item>
+    
+     <ons-list-item>       
+	    <ons-input type="text" name="contact_phone" required  class="full_width contact_phone" modifier="underbar" placeholder="Contact number"  style="margin: 0 0px;" float onclick="showPage('enter_phone.html')" onfocus="showPage('enter_phone.html')" ></ons-input>
+      <img class="stic-icon" src="lib/icons/mobile.svg" onerror="this.src='mobile.png'">
+    </ons-list-item>
+    
+    
+     <ons-list-item>       
+	  <ons-input type="text" name="location_name" id="location_name" required class="full_width location_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Floor/unit/Room #" float></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item> 
+    
+    <ons-list-item>       
+       <label class="left">
+        <ons-checkbox name="save_address" class="save_address"  input-id="save_address" value="1"></ons-checkbox>
+      </label>
+      <label for="save_address" class="center">
+        <span class="trn">Save to my address book</span> 
+      </label>
+    </ons-list-item> 
+    
+   </ons-list>
+  
+  </div> 
+  <!--form_wrapper-->
+
+ </form> 
+
+<div class="bottom_gap"></div>
+
+<ons-bottom-toolbar modifier="transparent" >    
+   <ons-button modifier="large to_orange no_shadow" onclick="setPreColetaLocation()" >     
+     <span class="trn">APPLY</span>
+   </ons-button>           
+</ons-bottom-toolbar>  
+
+</ons-page>
+</template>
+
+
+<template id="pre_coleta_form_select_location.html">
+  <ons-page id="pre_coleta_form_select_location" modifier="" >  
+
+     <ons-toolbar modifier="no_shadow" >
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">
+      <span class="trn">Select address</span>
+    </div>
+  </ons-toolbar>
+  
+  
+  
+  <form id="frm_pre_coleta_form_select_location" class="frm_pre_coleta_form_select_location" method="POST">
+  <div class="form_wrapper">
+      <ons-list>
+      
+      <ons-list-item>
+        <div class="pre_coleta_book_wrap"></div>
+      </ons-list-item>     
+      
+      <ons-list-item>       
+       <div class="center">         
+         <ons-input type="text" name="contact_phone" id="contact_phone" class="contact_phone" required 
+          modifier="transparent" placeholder="Contact Number" float
+          onclick="showPage('enter_phone.html')" onfocus="showPage('enter_phone.html')"
+          ></ons-input>       
+       </div>
+      </ons-list-item>
+      
+       <ons-list-item>       
+       <div class="center">         
+           <ons-input type="text" name="delivery_instruction"  class="delivery_instruction"
+            modifier="transparent" placeholder="Delivery instructions" float></ons-input>
+       </div>
+       </ons-list-item> 
+    
+      </ons-list>
+  </div> <!--form_wrapper-->
+  </form>
+  
+   <ons-fab position="bottom right" modifier="mini">
+    <ons-icon icon="md-plus" class="color_green" onclick="replacePage('pre_coleta_form_location.html');"></ons-icon>
+   </ons-fab>
+ 
+  <ons-bottom-toolbar modifier="transparent" >    
+       <ons-button modifier="large to_orange no_shadow" onclick="setPreColetaBookLocation()" >     
+         <span class="trn">APPLY</span>
+       </ons-button>           
+  </ons-bottom-toolbar>
+  
+</ons-page>
+</template>
+	
+<template id="retorno_form_location.html">
+<ons-page id="retorno_form_location" modifier="is_rtl"   >  
+
+<ons-back-button modifier="fixed_back_button">Back</ons-back-button> 
+<div class="map_half" id="map_address"></div>
+
+<div class="botao-mapa">
+<ons-button id="location_change" class="noborder botao-do-mapa" modifier="quiet button_small trn" onclick="map_setEnderecoValue()" >
+<span class="trn">Aplicar Endereco do Mapa</span>
+    </ons-button>
+  </div>
+  
+  
+<form method="POST" id="frm_retorno_form_location" class="frm_retorno_form_location">   
+  <input type="hidden" name="lat" id="lat" class="lat">
+  <input type="hidden" name="lng" id="lng" class="lng">
+  
+  <input type="hidden" name="mapbox_drag_map" class="mapbox_drag_map" id="mapbox_drag_map">
+  <input type="hidden" name="mapbox_drag_end" class="mapbox_drag_end" id="mapbox_drag_end">
+  
+  <input type="hidden" name="state_id" class="state_id" id="state_id">
+  <input type="hidden" name="city_id" class="city_id" id="city_id">
+  <input type="hidden" name="area_id" class="area_id" id="area_id">
+  
+  <div class="form_wrapper">
+  
+<ons-list modifier="field_list">     
+	<ons-list-item style="margin-top: 5px;">
+     <ons-input type="text" id="cep" name="zipcode"  class="stic-field full_width zipcode" modifier="underbar" placeholder="Zip Code" float onblur="pesquisacep(this.value);" style="margin: 0 0px;"></ons-input>
+	 <div style="padding: 0px 0px 0px 0px; font-size: 10px; margin: 2px 5px 15px 5px; text-align: center; color: darkviolet; font-family: GoogleSans;" class="trn">Digite o CEP para preencher automaticamente o endereco.</div>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item>
+<ons-row class="stic-tips-row" vertical-align="center"><ons-col class="left">
+	<ons-list-item style="width: 245px;padding-right: 0px;">
+	  <ons-input type="text" name="street" id="street" required class="full_width street"  style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Street" float></ons-input>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'" style="margin-right: -22px;">
+    </ons-list-item>
+</ons-col>
+<ons-col class="right">
+    <ons-list-item>       
+	  <ons-input type="text" name="numero" id="numero" required class="full_width numero" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Numero" float></ons-input>
+      <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item>
+</ons-col></ons-row>
+    
+    <ons-list-item>       
+	  <ons-input type="text" name="area_name" id="area_name" required class="full_width area_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Distric/Area/neighborhood" float onclick="showLocationArea();"></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+	</ons-list-item>	
+	
+<ons-row class="stic-tips-row" vertical-align="center"><ons-col class="left">
+	<ons-list-item style="width: 245px;padding-right: 0px;">
+	  <ons-input type="text" name="city_name" id="city_name" required class="full_width city_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="City" float onclick="showLocationCity();"></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'" style="margin-right: -22px;">
+    </ons-list-item>
+</ons-col>
+<ons-col class="right">
+    <ons-list-item>       
+	  <ons-input type="text" name="state_name" id="state_name" required class="full_width state_name" style="margin: 0 0px;"
+	   modifier="underbar" placeholder="State/Region" float onclick="showPage('location_state.html','none',{'address_book':1})"></ons-input>
+     <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item>
+</ons-col></ons-row>
+    
+    <ons-list-item>       
+    <ons-input type="text" name="delivery_instruction"  class="full_width delivery_instruction" modifier="underbar" placeholder="Delivery instructions" style="margin: 0 0px;" float></ons-input>   
+    <img class="stic-icon" src="lib/icons/edit.svg" onerror="this.src='edit.png'">
+    </ons-list-item>
+    
+     <ons-list-item>       
+	    <ons-input type="text" name="contact_phone" required  class="full_width contact_phone" modifier="underbar" placeholder="Contact number"  style="margin: 0 0px;" float onclick="showPage('enter_phone.html')" onfocus="showPage('enter_phone.html')" ></ons-input>
+      <img class="stic-icon" src="lib/icons/mobile.svg" onerror="this.src='mobile.png'">
+    </ons-list-item>
+    
+    
+     <ons-list-item>       
+	  <ons-input type="text" name="location_name" id="location_name" required class="full_width location_name" style="margin: 0 0px;"
+	   modifier="underbar"  placeholder="Floor/unit/Room #" float></ons-input>
+    <img class="stic-icon" src="lib/icons/pin.svg" onerror="this.src='pin.png'">
+    </ons-list-item> 
+    
+    <ons-list-item>       
+       <label class="left">
+        <ons-checkbox name="save_address" class="save_address"  input-id="save_address" value="1"></ons-checkbox>
+      </label>
+      <label for="save_address" class="center">
+        <span class="trn">Save to my address book</span> 
+      </label>
+    </ons-list-item> 
+    
+   </ons-list>
+  
+  </div> 
+  <!--form_wrapper-->
+
+ </form> 
+
+<div class="bottom_gap"></div>
+
+<ons-bottom-toolbar modifier="transparent" >    
+   <ons-button modifier="large to_orange no_shadow" onclick="setRetornoLocation()" >     
+     <span class="trn">APPLY</span>
+   </ons-button>           
+</ons-bottom-toolbar>  
+
+</ons-page>
+</template>
+
+
+<template id="retorno_form_select_location.html">
+  <ons-page id="retorno_form_select_location" modifier="" >  
+
+     <ons-toolbar modifier="no_shadow" >
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">
+      <span class="trn">Select address</span>
+    </div>
+  </ons-toolbar>
+  
+  
+  
+  <form id="frm_retorno_form_select_location" class="frm_retorno_form_select_location" method="POST">
+  <div class="form_wrapper">
+      <ons-list>
+      
+      <ons-list-item>
+        <div class="retorno_book_wrap"></div>
+      </ons-list-item>     
+      
+      <ons-list-item>       
+       <div class="center">         
+         <ons-input type="text" name="contact_phone" id="contact_phone" class="contact_phone" required 
+          modifier="transparent" placeholder="Contact Number" float
+          onclick="showPage('enter_phone.html')" onfocus="showPage('enter_phone.html')"
+          ></ons-input>       
+       </div>
+      </ons-list-item>
+      
+       <ons-list-item>       
+       <div class="center">         
+           <ons-input type="text" name="delivery_instruction"  class="delivery_instruction"
+            modifier="transparent" placeholder="Delivery instructions" float></ons-input>
+       </div>
+       </ons-list-item> 
+    
+      </ons-list>
+  </div> <!--form_wrapper-->
+  </form>
+  
+   <ons-fab position="bottom right" modifier="mini">
+    <ons-icon icon="md-plus" class="color_green" onclick="replacePage('retorno_form_location.html');"></ons-icon>
+   </ons-fab>
+ 
+  <ons-bottom-toolbar modifier="transparent" >    
+       <ons-button modifier="large to_orange no_shadow" onclick="setRetornoBookLocation()" >     
+         <span class="trn">APPLY</span>
+       </ons-button>           
+  </ons-bottom-toolbar>
+  
+</ons-page>
+</template>
+<!-- Fim da atualização -->
 <template id="location_postal_code.html">
 <ons-page id="location_postal_code" modifier="page_white" >
 

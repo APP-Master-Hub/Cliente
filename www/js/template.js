@@ -129,7 +129,9 @@ MerchantCarousel = function (data) {
     html += '</div>';
     html += '</div>';
 
-    if (!empty(val.rating)) {
+/** Atualização Master Hub (Minhas Modificações) **/
+		if (val.rating.ratings >= 2) {
+/** Fim da atualização **/
       html += '<div class="ratings-box text-right">';
       html += '<ons-icon class="gold-color f13" icon="star"></ons-icon>';
       html += '<span class="center stic-score bold m0 f14 trn">' + val.rating.ratings + '</span>';
@@ -387,7 +389,9 @@ MerchantFeatured = function (data) {
     html += '</div>';
 
     html += '<div class="featured-carousel-wrap">';
-    html += '<h4>' + val.restaurant_name + '</h4>';
+/** Atualização Master Hub (Minhas Modificações) **/
+		html += '<h4 class="concatenar">' + val.restaurant_name + '</h4>';
+/** Fim da atualização **/
     html += '<div class="view-btn">';
     html += '<span class="trn">' + t("View restaurant") + '</span>';
     html += '<ons-icon icon="ion-ios-arrow-thin-right"></ons-icon>';
@@ -450,7 +454,9 @@ MerchantList = function (data) {
     html += '<div class="mb5" style="width:77%;">';
 
     html += '<h4>' + val.restaurant_name + '</h4>';
-    if (!empty(val.rating)) {
+/** Atualização Master Hub (Minhas Modificações) **/
+		if (val.rating.ratings >= 2) {
+/** Fim da atualização **/
       html += '<span class="center stic-score trn"> · ' + val.rating.ratings + '</span>';
       html += '<ons-icon class="gold-color" icon="star"></ons-icon>';
       // html += '<span class="center ultra-light-gray reviews-qty trn">('+reviews_qty+')</span>';
@@ -625,7 +631,9 @@ restaurantList = function (data, element) {
     html += '<ons-col class="stic-div-details">';
     html += '<div class="mb5" style="width:77%;">';
     html += '<h4 class="is_rtl_text_right">' + val.restaurant_name + '</h4>';
-    if (!empty(val.rating)) {
+/** Atualização Master Hub (Minhas Modificações) **/
+		if (val.rating.ratings >= 2) {
+/** Fim da atualização **/
       html += '<span class="center stic-score trn"> · ' + val.rating.ratings + '</span>';
       html += '<ons-icon class="gold-color" icon="star"></ons-icon>';
       // html += '<span class="center ultra-light-gray reviews-qty trn">('+reviews_qty+')</span>';
@@ -1311,51 +1319,54 @@ restaurantCategory = function (data, element) {
         }
 
         if (!empty(item_val.item_description)) {
-          html += '<span class="stic-ingridients list-item__subtitle">' + item_val.item_description + '</span>';
-
+/** Atualização Master Hub (Minhas Modificações) **/
+					//html += '<span class="stic-ingridients list-item__subtitle">' + item_val.item_description + '</span>';
+/** Fim da atualização **/
           if (code_version == "1.4") {
             if (item_val.prices2.length > 0) {
               // html+='<br/>';
               $.each(item_val.prices2, function (pricekey, priceval) {
                 if (priceval.discount > 0.001) {
-                  html += '<price>' + '<span class="tag_discount">' + priceval.original_price + '</span>' + priceval.discounted_price_pretty + '</price>';
-                }
-                else {
-                  html += '<price>' + priceval.original_price + '</price>';
+/** Atualização Master Hub (Minhas Modificações) **/
+			     					html+='<br/><price>'+ '<span class="tag_discount">'+ priceval.original_price+'</span>' + priceval.discounted_price_pretty+'</price>';
+			     				} else {
+			     					html+='<br/><price>'+priceval.original_price+'</price>';
+/** Fim da atualização **/
                 }
               });
-            }
-
-          }
-          else {
+			     		}
+			         } else {
             if (item_val.prices.length > 0) {
               $.each(item_val.prices, function (pricekey, priceval) {
-                html += '<price>' + priceval + '</price>';
+/** Atualização Master Hub (Minhas Modificações) **/
+							html += '<br/><price>' + priceval + '</price>';
+/** Fim da atualização **/
               });
             }
           }
-
-        }
-        else {
-
-          html += '<span class="stic-ingridients list-item__subtitle"></span>';
+			     } else {
+/** Atualização Master Hub (Minhas Modificações) **/
+									//html+='<span class="stic-ingridients list-item__subtitle"></span>';
           if (code_version == "1.4") {
             if (item_val.prices2.length > 0) {
               // html+='<br/>';
+/** Fim da atualização **/
               $.each(item_val.prices2, function (pricekey, priceval) {
                 if (priceval.discount > 0.001) {
-                  html += '<price>' + '<span class="tag_discount">' + priceval.original_price + '</span>' + priceval.discounted_price_pretty + '</price>';
-                }
-                else {
-                  html += '<price>' + priceval.original_price + '</price>';
+/** Atualização Master Hub (Minhas Modificações) **/
+			     					html+='<br/><price>'+ '<span class="tag_discount">'+ priceval.original_price+'</span>' + priceval.discounted_price_pretty+'</price>';
+			     				} else {
+			     					html+='<br/><price>'+priceval.original_price+'</price>';
+/** Fim da atualização **/
                 }
               });
-            }
-          }
-          else {
-            if (item_val.prices.length > 0) {
-              $.each(item_val.prices, function (pricekey, priceval) {
-                html += '<price>' + priceval + '</price>';
+			     		}
+			     	} else {
+					if (item_val.prices.length > 0) {
+						$.each(item_val.prices, function (pricekey, priceval) {
+/** Atualização Master Hub (Minhas Modificações) **/
+							html += '<br/><price>' + priceval + '</price>';
+/** Fim da atualização **/
               });
             }
           }
@@ -1481,10 +1492,11 @@ setItemList = function (data, element) {
         if (val.prices2.length > 0) {
           $.each(val.prices2, function (pricekey, priceval) {
             if (priceval.discount > 0.001) {
-              html += '<price> <span class="tag_discount">' + priceval.original_price + '</span>' + priceval.discounted_price_pretty + '</price>';
-            }
-            else {
-              html += '<price>' + priceval.original_price + '</price>';
+/** Atualização Master Hub (Minhas Modificações) **/
+							  	html+= '<br/><price> <span class="tag_discount">'+ priceval.original_price+'</span>' + priceval.discounted_price_pretty + '</price>';
+							  } else {
+							  	html+= '<br/><price>'+priceval.original_price + '</price>';
+/** Fim da atualização **/
             }
           });
         }
@@ -1619,6 +1631,9 @@ var displayItemDetails = function (data, cart_data) {
   else {
     html += '<div class="fake-toolbar"></div>';
     $("#item_details ons-back-button span").addClass("fill-black");
+/** Atualização Master Hub (Minhas Modificações) **/
+		$("#item_details ons-back-button").addClass("background-white");
+/** Fim da atualização **/
   }
 
   /*PHOTO GALLERY*/
@@ -2017,8 +2032,11 @@ var displayCartDetails = function (datas) {
 
   var html = '';
 
-  html += '<div class="cart_header" style="background-image: url(' + "'" + datas.merchant.background_url + "'" + ')"   >';
-
+/** Atualização Master Hub (Minhas Modificações) **/
+	var html='<div class="relative" style="z-index: -1;">';
+	html += '<div class="cart_header" style="background-image: url(' + "'" + datas.merchant.background_url + "'" + ')"   >';
+	html+='</div>';
+/** Fim da atualização **/
   html += '<div class="is-loading medium-loader">';
   html += '<div class="spinner"></div>';
   html += '<img class="hide" src="' + datas.merchant.background_url + '">';
@@ -2027,24 +2045,38 @@ var displayCartDetails = function (datas) {
   html += '</div>';
 
   html += '<div class="cream_header">';
-  html += '<div class="stic-lateral-wrap">';
-  html += '<h3 class="block trn">' + t("Order details") + '</h3>';
+/** Atualização Master Hub (Minhas Modificações) **/
+	html+='<div class="wrap" style="border-radius: 30px;margin-top: -52px;z-index: 32;background-color: white;">';
+		html+='<h3 class="block trn" style="font-size: 18px;padding: 10px 0px 10px 0px;">'+t("Order details")+'</h3>';
+/** Fim da atualização **/
   html += '<p class="small inline trn">' + t("You're ordering at") + '</p>';
   html += '<p class="small inline bold ml4">' + datas.merchant.restaurant_name + '</p>';
   html += '</div>';
   html += '</div>';
 
-
+/** Atualização Master Hub (Minhas Modificações) **/
+		html+='<ons-list-item modifier="nodivider" style="margin-top: -99px; position: absolute;">';				  
+		  html+='<div class="right">';
+		  html+='<ons-button class="cc-btn" modifier="quiet small_button" onclick="confirmClearCart();" >';
+		  	html+='<span class="darkblue bold">'+t("CLEAR CART")+'</span>';
+		  	html+='</ons-button>';
+		  html+='</div>';
+	    html+='</ons-list-item>';
+/** Fim da atualização **/
   html += '<ons-list>';
   if (!empty(data.item)) {
     $.each(data.item, function (item_key, item_val) {
-      html += '<ons-list-item modifier="nodivider">';
+/** Atualização Master Hub (Minhas Modificações) **/
+			html+='<ons-list-item modifier="nodivider" class="mb10">';
+/** Fim da atualização **/
 
       html += '<ons-row vertical-align="center">';
       html += '<ons-col class="left" width="20px">';
       html += '<span class="notification green f15">' + item_val.qty + '</span>';
       html += '</ons-col>';
-      html += '<ons-col class="center bold darkblue f15" onclick="itemDetails(' + "'" + item_val.item_id + "'," + "'" + item_val.category_id + "'," + "'" + item_key + "'" + ')">';
+/** Atualização Master Hub (Minhas Modificações) **/
+			html += '<ons-col class="center bold darkblue f15" onclick="itemDetails(' + "'" + item_val.item_id + "'," + "'" + item_val.category_id + "'," + "'" + item_key + "'" + ')" style="white-space: nowrap; width: 12em; overflow: hidden; text-overflow: ellipsis;">';
+/** Fim da atualização **/
       html += '<span>' + item_val.item_name + '</span>';
       html += '</ons-col>';
       html += '<ons-col class="right text-right" width="20px">';
@@ -2132,14 +2164,27 @@ var displayCartDetails = function (datas) {
       /*SUB ITEM*/
       if (!empty(item_val.new_sub_item)) {
         $.each(item_val.new_sub_item, function (new_sub_item_key, new_sub_item_val) {
-          html += '<ons-list-item modifier="nodivider normal_list" >';
-          html += '<ons-list-header style="padding-left:0;"><span class="list-item__subtitle">' + new_sub_item_key + '</span></ons-list-header>';
+/** Atualização Master Hub (Minhas Modificações) **/
+					html+='<ons-list-item modifier="nodivider normal_list" style="margin-top: -20px;">';
+					    html+='<ons-list-header style="padding-left:0; background: transparent;"><span class="list-item__subtitle">'+ new_sub_item_key +'</span></ons-list-header>';
+/** Fim da atualização **/
           $.each(new_sub_item_val, function (new_sub_item_val_key, new_sub_item_val_val) {
             dump(new_sub_item_val_val);
             html += '<ons-row>';
-            html += '<ons-col vertical-align="center" width="70px" >' + new_sub_item_val_val.addon_qty + 'x' + prettyPrice(new_sub_item_val_val.addon_price) + '</ons-col>';
-            html += '<ons-col vertical-align="center" >' + new_sub_item_val_val.addon_name + '</ons-col>';
-            html += '<ons-col vertical-align="center" class="text_right" width="40px" >' + prettyPrice(parseFloat(new_sub_item_val_val.addon_qty) * parseFloat(new_sub_item_val_val.addon_price)) + '</ons-col>';
+/** Atualização Master Hub (Minhas Modificações) **/
+							if (new_sub_item_val_val.addon_price > 0){
+					    	  html+='<ons-col vertical-align="center" width="70px" style="font-size: smaller;">'+ new_sub_item_val_val.addon_qty + 'x  ' + prettyPrice(new_sub_item_val_val.addon_price)  +'</ons-col>';
+							} else {
+					    	  html+='<ons-col vertical-align="center" width="70px" style="font-size: smaller;">'+ new_sub_item_val_val.addon_qty + 'x </ons-col>';
+							}
+
+					    	  html+='<ons-col vertical-align="center" style="font-size: smaller;">'+ new_sub_item_val_val.addon_name  +'</ons-col>';
+							if (new_sub_item_val_val.addon_price > 0){
+					    	  html+='<ons-col vertical-align="center" class="text_right" width="50px" style="font-size: smaller;">'+  prettyPrice(parseFloat(new_sub_item_val_val.addon_qty)*parseFloat(new_sub_item_val_val.addon_price))  +'</ons-col>';
+							} else {
+					    	  html+='<ons-col vertical-align="center" class="text_right" width="40px" style="font-size: smaller;"> ---- </ons-col>';
+							}
+/** Fim da atualização **/
             html += '</ons-row>';
           });
           html += '</ons-list-item>';
@@ -2149,14 +2194,15 @@ var displayCartDetails = function (datas) {
     });
 
 
-    html += '<ons-list-item class="" modifier="nodivider" >';
-    html += '<div class="right">';
-    html += '<ons-button modifier="quiet small_button" onclick="confirmClearCart();" >';
-    html += '<span class="darkblue bold">' + t("CLEAR CART") + '</span>';
-    html += '</ons-button>';
-    html += '</div>';
-    html += '</ons-list-item>';
-
+/** Atualização Master Hub (Minhas Modificações) **/
+/*		html+='<ons-list-item class="" modifier="nodivider" >';				  
+		  html+='<div class="right">';
+		  html+='<ons-button modifier="quiet small_button" onclick="confirmClearCart();" >';
+		  	html+='<span class="darkblue bold">'+t("CLEAR CART")+'</span>';
+		  	html+='</ons-button>';
+		  html+='</div>';
+	    html+='</ons-list-item>'; */
+/** Fim da atualização **/
   }
   else {
     dump('no row');
@@ -2220,6 +2266,11 @@ var displayCartDetails = function (datas) {
   selected_delivery_time = '';
 
   selected_delivery_address = t('Enter delivery address');
+/** Atualização Master Hub (Minhas Modificações) **/
+	selected_coleta_address = t('Please enter coleta here');
+	selected_pre_coleta_address = t('Please enter pre coleta here');
+	selected_retorno_address = t('Please enter coleta here');
+/** Fim da atualização **/
 
   selected_delivery_date = datas.default_delivery_date;
   default_delivery_date_pretty = datas.default_delivery_date_pretty;
@@ -2250,12 +2301,76 @@ var displayCartDetails = function (datas) {
 
   var delivery_date_list_label = '';
   var delivery_time_list_label = '';
+/** Atualização Master Hub (Minhas Modificações) **/
+	var tipo_da_transacao = datas.transaction_type;
+	
+			if (buscaNoArray(datas.data.item, "item_de_servico","2")==true){
+			setStorage("transaction_type", "prestacao_servico");
+			tipo_da_transacao = 'prestacao_servico'; 
+				selected_services = 'prestacao_servico';
+				$(".transaction_type_label").html(t('Prestacao Servico'));
+			} else if (buscaNoArray(datas.data.item, "tipo_do_servico","coleta")==true){
+			setStorage("transaction_type", "coleta");
+			tipo_da_transacao = 'coleta'; 
+				selected_services = 'coleta';
+				$(".transaction_type_label").html(t('Coleta'));
+			} else if (buscaNoArray(datas.data.item, "tipo_do_servico","coleta_retorno")==true){
+			setStorage("transaction_type", "coleta_retorno");
+			tipo_da_transacao = 'coleta_retorno'; 
+				selected_services = 'coleta_retorno';
+				$(".transaction_type_label").html(t('Pre Coleta'));
+			} else if (buscaNoArray(datas.data.item, "tipo_do_servico","pre_coleta")==true){
+			setStorage("transaction_type", "pre_coleta");
+			tipo_da_transacao = 'pre_coleta'; 
+				selected_services = 'pre_coleta';
+				$(".transaction_type_label").html(t('Pre Coleta'));
+			} else if (buscaNoArray(datas.data.item, "tipo_do_servico","pre_coleta_retorno")==true){
+			setStorage("transaction_type", "pre_coleta_retorno");
+			tipo_da_transacao = 'pre_coleta_retorno'; 
+				selected_services = 'pre_coleta_retorno';
+				$(".transaction_type_label").html(t('Pre Coleta Retorno'));
+			} else if (tipo_da_transacao==='prestacao_servico' && buscaNoArray(datas.data.item, "item_de_servico", "0")===true){
+			setStorage("transaction_type", "delivery");	
+			tipo_da_transacao = 'delivery';
+			selected_services = 'delivery';
+				$(".transaction_type_label").html(t('Delivery'));
+			}
+/** Fim da atualização **/
 
-  switch (datas.transaction_type) {
+/** Atualização Master Hub (Minhas Modificações) **/
+	switch (tipo_da_transacao) {
+/** Fim da atualização **/
     case "delivery":
       delivery_date_list_label = t('Delivery Date');
       delivery_time_list_label = t('Delivery Time');
       break;
+
+/** Atualização Master Hub (Minhas Modificações) **/
+		case "prestacao_servico":
+			delivery_date_list_label = t('Service Date');
+			delivery_time_list_label = t('Service Time');
+			break;
+
+		case "coleta":
+			delivery_date_list_label = t('Coleta Date');
+			delivery_time_list_label = t('Coleta Time');
+			break;
+
+		case "coleta_retorno":
+			delivery_date_list_label = t('Coleta Date');
+			delivery_time_list_label = t('Coleta Time');
+			break;
+
+		case "pre_coleta":
+			delivery_date_list_label = t('Pre Coleta Date');
+			delivery_time_list_label = t('Pre Coleta Time');
+			break;
+
+		case "pre_coleta_retorno":
+			delivery_date_list_label = t('Pre Coleta Date');
+			delivery_time_list_label = t('Pre Coleta Time');
+			break;
+/** Fim da atualização **/
 
     case "pickup":
       delivery_date_list_label = t('Pickup Date');
@@ -2271,36 +2386,37 @@ var displayCartDetails = function (datas) {
 
   html += '<ons-list-header>' + t('About the order') + '</ons-list-header>';
 
-  if (datas.transaction_type == "delivery") {
+/** Atualização Master Hub (Minhas Modificações) **/
+	if (tipo_da_transacao == "delivery") {
+/** Fim da atualização **/
 
     if (!empty(datas.cart_details)) {
       if (!empty(datas.cart_details.street)) {
         selected_delivery_address = datas.cart_details.street;
-        selected_delivery_address += " ";
-        selected_delivery_address += datas.cart_details.city;
-        selected_delivery_address += " ";
-        selected_delivery_address += datas.cart_details.state;
-        selected_delivery_address += " ";
+/** Fim da atualização **/
+				selected_delivery_address += ", ";
+				selected_delivery_address += datas.cart_details.numero;
+				selected_delivery_address += "</br>";
+				selected_delivery_address+= datas.cart_details.area_name;
+				selected_delivery_address+=" - ";
+				selected_delivery_address += datas.cart_details.city;
+				selected_delivery_address+="/";
+				selected_delivery_address += datas.cart_details.state;
+			if (!empty(datas.cart_details.zipcode))	{
+				selected_delivery_address+="</br>";
+			}
+/** Fim da atualização **/
         selected_delivery_address += datas.cart_details.zipcode;
         $(".delivery_address").val(selected_delivery_address);
       }
     }
 
-    html += '<ons-list-item tappable class="stic-options-list address" modifier="chevron longdivider" onclick="initAddress()" >';
+/** Atualização Master Hub (Minhas Modificações) **/
+		html += '<ons-list-item tappable class="stic-options-list-address stic-address-row address" modifier="chevron longdivider" onclick="initAddress()" >';
+/** Fim da atualização **/
     html += '<div class="left">' + t("Delivery Address") + '</div>';
     html += '<div class="right"> <span class="list-item__subtitle delivery_address_label concat_text">' + selected_delivery_address + '</span></div>';
     html += '</ons-list-item>';
-
-    if (datas.checkout_stats.is_pre_order != 1) {
-      html += '<ons-list-item class="stic-options-list asap">';
-      html += '<div class="center">';
-      html += t("Delivery Asap");
-      html += '</div>';
-      html += '<div class="right">';
-      html += '<ons-switch id="delivery_asap" class="delivery_asap" value="1" onclick="setAsap()"></ons-switch>';
-      html += '</div>';
-      html += '</ons-list-item>';
-    }
   }
 
   /*CONTACTLESS*/
@@ -2326,11 +2442,350 @@ var displayCartDetails = function (datas) {
     }
   }
 
+/** Atualização Master Hub (Minhas Modificações) **/
+	if (tipo_da_transacao == "prestacao_servico") {
+
+		if (!empty(datas.cart_details)) {
+			if (!empty(datas.cart_details.street)) {
+				selected_delivery_address = datas.cart_details.street;
+				selected_delivery_address += ", ";
+				selected_delivery_address += datas.cart_details.numero;
+				selected_delivery_address += "</br>";
+				selected_delivery_address+= datas.cart_details.area_name;
+				selected_delivery_address+="</br>";
+				selected_delivery_address += datas.cart_details.city;
+				selected_delivery_address+="/";
+				selected_delivery_address += datas.cart_details.state;
+			if (!empty(datas.cart_details.zipcode))	{
+				selected_delivery_address+="</br>";
+			}
+				selected_delivery_address+= datas.cart_details.zipcode;
+				$(".delivery_address").val(selected_delivery_address);
+			}
+		}
+
+		//html+='<ons-list-item tappable modifier="chevron longdivider" onclick="showPage(\'address_form.html\')" >';	
+		html += '<ons-list-item tappable class="stic-options-list-address stic-address-row address" modifier="chevron longdivider" onclick="initAddress()" >';
+		html += '<div class="left">' + t("Service Address") + '</div>';
+		html += '<div class="right"> <span class="list-item__subtitle delivery_address_label concat-text">' + selected_delivery_address + '</span></div>';
+		html += '</ons-list-item>';
+	}
+	
+	if (tipo_da_transacao == "coleta") {
+
+		if (!empty(datas.cart_details.address_coleta)) {
+			if (!empty(datas.cart_details.address_coleta.street)) {
+				selected_coleta_address = datas.cart_details.address_coleta.street;
+				selected_coleta_address += ", ";
+				selected_coleta_address += datas.cart_details.address_coleta.numero;
+				selected_coleta_address += "</br>";
+				selected_coleta_address+= datas.cart_details.address_coleta.area_name;
+				selected_coleta_address+="</br>";
+				selected_coleta_address += datas.cart_details.address_coleta.city;
+				selected_coleta_address+="/";
+				selected_coleta_address += datas.cart_details.address_coleta.state;
+			if (!empty(datas.cart_details.address_coleta.zipcode))	{
+				selected_coleta_address+="</br>";
+			}
+				selected_coleta_address+= datas.cart_details.address_coleta.zipcode;
+				$(".coleta_address").val(selected_coleta_address);
+			}
+		}
+		
+		if (!empty(datas.cart_details)) {
+			if (!empty(datas.cart_details.street)) {
+				selected_delivery_address = datas.cart_details.street;
+				selected_delivery_address += ", ";
+				selected_delivery_address += datas.cart_details.numero;
+				selected_delivery_address += "</br>";
+				selected_delivery_address+= datas.cart_details.area_name;
+				selected_delivery_address+="</br>";
+				selected_delivery_address += datas.cart_details.city;
+				selected_delivery_address+="/";
+				selected_delivery_address += datas.cart_details.state;
+			if (!empty(datas.cart_details.zipcode))	{
+				selected_delivery_address+="</br>";
+			}
+				selected_delivery_address+= datas.cart_details.zipcode;
+				$(".delivery_address").val(selected_delivery_address);
+			}
+		}
+		
+		//html+='<ons-list-item tappable modifier="chevron longdivider" onclick="showPage(\'address_form.html\')" >';	
+		html += '<ons-list-item tappable class="stic-options-list-address stic-address-row address" modifier="chevron longdivider" onclick="initColetaAddress()" >';
+		html += '<div class="left">' + t("Coleta Address") + '</div>';
+		html += '<div class="right"> <span class="list-item__subtitle coleta_address_label concat-text">' + selected_coleta_address + '</span></div>';
+		html += '</ons-list-item>';
+		
+		html += '<ons-list-item tappable class="stic-options-list-address stic-address-row address" modifier="chevron longdivider" onclick="initAddress()" >';
+		html += '<div class="left">' + t("Delivery Address") + '</div>';
+		html += '<div class="right"> <span class="list-item__subtitle delivery_address_label concat-text">' + selected_delivery_address + '</span></div>';
+		html += '</ons-list-item>';
+	}
+	
+	if (tipo_da_transacao == "coleta_retorno") {
+
+		if (!empty(datas.cart_details.address_coleta)) {
+			if (!empty(datas.cart_details.address_coleta.street)) {
+				selected_coleta_address = datas.cart_details.address_coleta.street;
+				selected_coleta_address += ", ";
+				selected_coleta_address += datas.cart_details.address_coleta.numero;
+				selected_coleta_address += "</br>";
+				selected_coleta_address+= datas.cart_details.address_coleta.area_name;
+				selected_coleta_address+="</br>";
+				selected_coleta_address += datas.cart_details.address_coleta.city;
+				selected_coleta_address+="/";
+				selected_coleta_address += datas.cart_details.address_coleta.state;
+			if (!empty(datas.cart_details.address_coleta.zipcode))	{
+				selected_coleta_address+="</br>";
+			}
+				selected_coleta_address+= datas.cart_details.address_coleta.zipcode;
+				$(".coleta_address").val(selected_coleta_address);
+			}
+		}
+		
+		if (!empty(datas.cart_details)) {
+			if (!empty(datas.cart_details.street)) {
+				selected_delivery_address = datas.cart_details.street;
+				selected_delivery_address += ", ";
+				selected_delivery_address += datas.cart_details.numero;
+				selected_delivery_address += "</br>";
+				selected_delivery_address+= datas.cart_details.area_name;
+				selected_delivery_address+="</br>";
+				selected_delivery_address += datas.cart_details.city;
+				selected_delivery_address+="/";
+				selected_delivery_address += datas.cart_details.state;
+			if (!empty(datas.cart_details.zipcode))	{
+				selected_delivery_address+="</br>";
+			}
+				selected_delivery_address+= datas.cart_details.zipcode;
+				$(".delivery_address").val(selected_delivery_address);
+			}
+		}
+		
+		//html+='<ons-list-item tappable modifier="chevron longdivider" onclick="showPage(\'address_form.html\')" >';	
+		html += '<ons-list-item tappable class="stic-options-list-address stic-address-row address" modifier="chevron longdivider" onclick="initColetaAddress()" >';
+		html += '<div class="left">' + t("Coleta Address") + '</div>';
+		html += '<div class="right"> <span class="list-item__subtitle coleta_address_label concat-text">' + selected_coleta_address + '</span></div>';
+		html += '</ons-list-item>';
+		
+		html += '<ons-list-item tappable class="stic-options-list-address stic-address-row address" modifier="chevron longdivider" onclick="initAddress()" >';
+		html += '<div class="left">' + t("Delivery Address") + '</div>';
+		html += '<div class="right"> <span class="list-item__subtitle delivery_address_label concat-text">' + selected_delivery_address + '</span></div>';
+		html += '</ons-list-item>';
+	}
+	
+	if (tipo_da_transacao == "pre_coleta") {
+
+		if (!empty(datas.cart_details.address_pre_coleta)) {
+			if (!empty(datas.cart_details.address_pre_coleta.street)) {
+				selected_pre_coleta_address = datas.cart_details.address_pre_coleta.street;
+				selected_pre_coleta_address += ", ";
+				selected_pre_coleta_address += datas.cart_details.address_pre_coleta.numero;
+				selected_pre_coleta_address += "</br>";
+				selected_pre_coleta_address+= datas.cart_details.address_pre_coleta.area_name;
+				selected_pre_coleta_address+="</br>";
+				selected_pre_coleta_address += datas.cart_details.address_pre_coleta.city;
+				selected_pre_coleta_address+="/";
+				selected_pre_coleta_address += datas.cart_details.address_pre_coleta.state;
+			if (!empty(datas.cart_details.address_pre_coleta.zipcode))	{
+				selected_pre_coleta_address+="</br>";
+			}
+				selected_pre_coleta_address+= datas.cart_details.address_pre_coleta.zipcode;
+				$(".pre_coleta_address").val(selected_pre_coleta_address);
+			}
+		}
+		
+		if (!empty(datas.cart_details.address_coleta)) {
+			if (!empty(datas.cart_details.address_coleta.street)) {
+				selected_coleta_address = datas.cart_details.address_coleta.street;
+				selected_coleta_address += ", ";
+				selected_coleta_address += datas.cart_details.address_coleta.numero;
+				selected_coleta_address += "</br>";
+				selected_coleta_address+= datas.cart_details.address_coleta.area_name;
+				selected_coleta_address+="</br>";
+				selected_coleta_address += datas.cart_details.address_coleta.city;
+				selected_coleta_address+="/";
+				selected_coleta_address += datas.cart_details.address_coleta.state;
+			if (!empty(datas.cart_details.address_coleta.zipcode))	{
+				selected_coleta_address+="</br>";
+			}
+				selected_coleta_address+= datas.cart_details.address_coleta.zipcode;
+				$(".coleta_address").val(selected_coleta_address);
+			}
+		}
+		
+		if (!empty(datas.cart_details)) {
+			if (!empty(datas.cart_details.street)) {
+				selected_delivery_address = datas.cart_details.street;
+				selected_delivery_address += ", ";
+				selected_delivery_address += datas.cart_details.numero;
+				selected_delivery_address += "</br>";
+				selected_delivery_address+= datas.cart_details.area_name;
+				selected_delivery_address+="</br>";
+				selected_delivery_address += datas.cart_details.city;
+				selected_delivery_address+="/";
+				selected_delivery_address += datas.cart_details.state;
+			if (!empty(datas.cart_details.zipcode))	{
+				selected_delivery_address+="</br>";
+			}
+				selected_delivery_address+= datas.cart_details.zipcode;
+				$(".delivery_address").val(selected_delivery_address);
+			}
+		}
+		//html+='<ons-list-item tappable modifier="chevron longdivider" onclick="showPage(\'address_form.html\')" >';	
+		html += '<ons-list-item tappable class="stic-options-list-address stic-address-row address" modifier="chevron longdivider" onclick="initPreColetaAddress()" >';
+		html += '<div class="left">' + t("Pre Coleta Address") + '</div>';
+		html += '<div class="right"> <span class="list-item__subtitle pre_coleta_address_label concat-text">' + selected_pre_coleta_address + '</span></div>';
+		html += '</ons-list-item>';
+		
+		//html+='<ons-list-item tappable modifier="chevron longdivider" onclick="showPage(\'address_form.html\')" >';	
+		html += '<ons-list-item tappable class="stic-options-list-address stic-address-row address" modifier="chevron longdivider" onclick="initColetaAddress()" >';
+		html += '<div class="left">' + t("Coleta Address") + '</div>';
+		html += '<div class="right"> <span class="list-item__subtitle coleta_address_label concat-text">' + selected_coleta_address + '</span></div>';
+		html += '</ons-list-item>';
+		
+		html += '<ons-list-item tappable class="stic-options-list-address stic-address-row address" modifier="chevron longdivider" onclick="initAddress()" >';
+		html += '<div class="left">' + t("Delivery Address") + '</div>';
+		html += '<div class="right"> <span class="list-item__subtitle delivery_address_label concat-text">' + selected_delivery_address + '</span></div>';
+		html += '</ons-list-item>';
+	}
+	
+	if (tipo_da_transacao == "pre_coleta_retorno") {
+
+		if (!empty(datas.cart_details.address_pre_coleta)) {
+			if (!empty(datas.cart_details.address_pre_coleta.street)) {
+				selected_pre_coleta_address = datas.cart_details.address_pre_coleta.street;
+				selected_pre_coleta_address += ", ";
+				selected_pre_coleta_address += datas.cart_details.address_pre_coleta.numero;
+				selected_pre_coleta_address += "</br>";
+				selected_pre_coleta_address+= datas.cart_details.address_pre_coleta.area_name;
+				selected_pre_coleta_address+="</br>";
+				selected_pre_coleta_address += datas.cart_details.address_pre_coleta.city;
+				selected_pre_coleta_address+="/";
+				selected_pre_coleta_address += datas.cart_details.address_pre_coleta.state;
+			if (!empty(datas.cart_details.address_pre_coleta.zipcode))	{
+				selected_pre_coleta_address+="</br>";
+			}
+				selected_pre_coleta_address+= datas.cart_details.address_pre_coleta.zipcode;
+				$(".pre_coleta_address").val(selected_pre_coleta_address);
+			}
+		}
+		
+		if (!empty(datas.cart_details.address_coleta)) {
+			if (!empty(datas.cart_details.address_coleta.street)) {
+				selected_coleta_address = datas.cart_details.address_coleta.street;
+				selected_coleta_address += ", ";
+				selected_coleta_address += datas.cart_details.address_coleta.numero;
+				selected_coleta_address += "</br>";
+				selected_coleta_address+= datas.cart_details.address_coleta.area_name;
+				selected_coleta_address+="</br>";
+				selected_coleta_address += datas.cart_details.address_coleta.city;
+				selected_coleta_address+="/";
+				selected_coleta_address += datas.cart_details.address_coleta.state;
+			if (!empty(datas.cart_details.address_coleta.zipcode))	{
+				selected_coleta_address+="</br>";
+			}
+				selected_coleta_address+= datas.cart_details.address_coleta.zipcode;
+				$(".coleta_address").val(selected_coleta_address);
+			}
+		}
+		
+		if (!empty(datas.cart_details)) {
+			if (!empty(datas.cart_details.street)) {
+				selected_delivery_address = datas.cart_details.street;
+				selected_delivery_address += ", ";
+				selected_delivery_address += datas.cart_details.numero;
+				selected_delivery_address += "</br>";
+				selected_delivery_address+= datas.cart_details.area_name;
+				selected_delivery_address+="</br>";
+				selected_delivery_address += datas.cart_details.city;
+				selected_delivery_address+="/";
+				selected_delivery_address += datas.cart_details.state;
+			if (!empty(datas.cart_details.zipcode))	{
+				selected_delivery_address+="</br>";
+			}
+				selected_delivery_address+= datas.cart_details.zipcode;
+				$(".delivery_address").val(selected_delivery_address);
+			}
+		}
+				
+		if (!empty(datas.cart_details.address_retorno)) {
+			if (!empty(datas.cart_details.address_retorno.street)) {
+				selected_retorno_address = datas.cart_details.address_retorno.street;
+				selected_retorno_address += ", ";
+				selected_retorno_address += datas.cart_details.address_retorno.numero;
+				selected_retorno_address += "</br>";
+				selected_retorno_address+= datas.cart_details.address_retorno.area_name;
+				selected_retorno_address+="</br>";
+				selected_retorno_address += datas.cart_details.address_retorno.city;
+				selected_retorno_address+="/";
+				selected_retorno_address += datas.cart_details.address_retorno.state;
+			if (!empty(datas.cart_details.address_retorno.zipcode))	{
+				selected_retorno_address+="</br>";
+			}
+				selected_retorno_address+= datas.cart_details.address_retorno.zipcode;
+				$(".retorno_address").val(selected_retorno_address);
+			}
+		}
+		
+		//html+='<ons-list-item tappable modifier="chevron longdivider" onclick="showPage(\'address_form.html\')" >';	
+		html += '<ons-list-item tappable class="stic-options-list-address stic-address-row address" modifier="chevron longdivider" onclick="initPreColetaAddress()" >';
+		html += '<div class="left">' + t("Pre Coleta Address") + '</div>';
+		html += '<div class="right"> <span class="list-item__subtitle pre_coleta_address_label concat-text">' + selected_pre_coleta_address + '</span></div>';
+		html += '</ons-list-item>';
+		
+		//html+='<ons-list-item tappable modifier="chevron longdivider" onclick="showPage(\'address_form.html\')" >';	
+		html += '<ons-list-item tappable class="stic-options-list-address stic-address-row address" modifier="chevron longdivider" onclick="initColetaAddress()" >';
+		html += '<div class="left">' + t("Coleta Address") + '</div>';
+		html += '<div class="right"> <span class="list-item__subtitle coleta_address_label concat-text">' + selected_coleta_address + '</span></div>';
+		html += '</ons-list-item>';
+		
+		html += '<ons-list-item tappable class="stic-options-list-address stic-address-row address" modifier="chevron longdivider" onclick="initAddress()" >';
+		html += '<div class="left">' + t("Delivery Address") + '</div>';
+		html += '<div class="right"> <span class="list-item__subtitle delivery_address_label concat-text">' + selected_delivery_address + '</span></div>';
+		html += '</ons-list-item>';
+		
+		html += '<ons-list-item tappable class="stic-options-list-address stic-address-row address" modifier="chevron longdivider" onclick="initRetornoAddress()" >';
+		html += '<div class="left">' + t("Retorno Address") + '</div>';
+		html += '<div class="right"> <span class="list-item__subtitle retorno_address_label concat-text">' + selected_retorno_address + '</span></div>';
+		html += '</ons-list-item>';
+	}
+	
+	if (selected_services==='prestacao_servico'){
+	html += '<ons-list-item class="stic-options-list" modifier="longdivider">';
+	html += '<div class="left">' + t('Transaction Type') + '</div>';
+	html += '<div class="right"><span class="list-item__subtitle transaction_type_label">' + t(services[selected_services]) + '</span></div>';
+	html += '</ons-list-item>';
+	} else if (selected_services==='coleta'){
+	html += '<ons-list-item class="stic-options-list" modifier="longdivider">';
+	html += '<div class="left">' + t('Transaction Type') + '</div>';
+	html += '<div class="right"><span class="list-item__subtitle transaction_type_label">' + t(services[selected_services]) + '</span></div>';
+	html += '</ons-list-item>';
+	} else if (selected_services==='coleta_retorno'){
+	html += '<ons-list-item class="stic-options-list" modifier="longdivider">';
+	html += '<div class="left">' + t('Transaction Type') + '</div>';
+	html += '<div class="right"><span class="list-item__subtitle transaction_type_label">' + t(services[selected_services]) + '</span></div>';
+	html += '</ons-list-item>';
+	} else if (selected_services==='pre_coleta'){
+	html += '<ons-list-item class="stic-options-list" modifier="longdivider">';
+	html += '<div class="left">' + t('Transaction Type') + '</div>';
+	html += '<div class="right"><span class="list-item__subtitle transaction_type_label">' + t(services[selected_services]) + '</span></div>';
+	html += '</ons-list-item>';
+	} else if (selected_services==='pre_coleta_retorno'){
+	html += '<ons-list-item class="stic-options-list" modifier="longdivider">';
+	html += '<div class="left">' + t('Transaction Type') + '</div>';
+	html += '<div class="right"><span class="list-item__subtitle transaction_type_label">' + t(services[selected_services]) + '</span></div>';
+	html += '</ons-list-item>';
+	} else {
+/** Fim da atualização **/
   html += '<ons-list-item class="stic-options-list" modifier="chevron longdivider" tappable onclick="showTransactionList()" >';
   html += '<div class="left">' + t('Transaction Type') + '</div>';
   html += '<div class="right"><span class="list-item__subtitle transaction_type_label">' + t(services[selected_services]) + '</span></div>';
   html += '</ons-list-item>';
-
+/** Atualização Master Hub (Minhas Modificações) **/
+	}
+/** Fim da atualização **/
   html += '<div class="bborder2"></div>';
 
   html += '<ons-list-header>' + t('Schedule delivery time') + '</ons-list-header>';
@@ -2344,12 +2799,53 @@ var displayCartDetails = function (datas) {
   html += '<div class="left">' + delivery_time_list_label + '</div>';
   html += '<div class="right"><span class="list-item__subtitle delivery_time_label">' + selected_delivery_time + '</span></div>';
   html += '</ons-list-item>';
-
+/** Atualização Master Hub (Minhas Modificações) **/
+		if (tipo_da_transacao == "delivery") {
+/** Fim da atualização **/
   if (!empty(data.total.delivery_charges)) {
     if (data.total.delivery_charges > 0.0001) {
       html += twoColumnBoldOnly(t('Delivery Fee'), prettyPrice(data.total.delivery_charges));
     }
   }
+/** Atualização Master Hub (Minhas Modificações) **/
+		} else if (tipo_da_transacao == "prestacao_servico") {
+	if (!empty(data.total.delivery_charges)) {
+		if (data.total.delivery_charges > 0.0001) {
+			html += twoColumnBoldOnly(t('Service Realocation'), prettyPrice(data.total.delivery_charges));
+		}
+	}
+		} else if (tipo_da_transacao == "coleta") {
+	if (!empty(data.total.delivery_charges)) {
+		if (data.total.delivery_charges > 0.0001) {
+			html += twoColumnBoldOnly(t('Coleta Fee'), prettyPrice(data.total.delivery_charges));
+		}
+	}
+		} else if (tipo_da_transacao == "coleta_retorno") {
+	if (!empty(data.total.delivery_charges)) {
+		if (data.total.delivery_charges > 0.0001) {
+			html += twoColumnBoldOnly(t('Coleta Retorno Fee'), prettyPrice(data.total.delivery_charges));
+		}
+	}
+		} else if (tipo_da_transacao == "pre_coleta") {
+	if (!empty(data.total.delivery_charges)) {
+		if (data.total.delivery_charges > 0.0001) {
+			html += twoColumnBoldOnly(t('Pre Coleta Fee'), prettyPrice(data.total.delivery_charges));
+		}
+	}
+		} else if (tipo_da_transacao == "pre_coleta_retorno") {
+	if (!empty(data.total.delivery_charges)) {
+		if (data.total.delivery_charges > 0.0001) {
+			html += twoColumnBoldOnly(t('Pre Coleta Retorno Fee'), prettyPrice(data.total.delivery_charges));
+		}
+	}
+		} else {
+	if (!empty(data.total.delivery_charges)) {
+		if (data.total.delivery_charges > 0.0001) {
+			html += twoColumnBoldOnly(t('Delivery Fee'), prettyPrice(data.total.delivery_charges));
+		}
+		}
+		}
+/** Fim da atualização **/
 
   if (!empty(data.total.merchant_packaging_charge)) {
     if (data.total.merchant_packaging_charge > 0.0001) {
@@ -2534,6 +3030,20 @@ var displayCartDetails = function (datas) {
   html += '<div class="left">' + delivery_time_list_label + '</div>';
   html += '<div class="right"><span class="list-item__subtitle delivery_time_label">' + selected_delivery_time + '</span></div>';
   html += '</ons-list-item>';
+/** Atualização Master Hub (Minhas Modificações) **/
+	if (datas.transaction_type == "delivery" || datas.transaction_type == "prestacao_servico") {
+    if (datas.checkout_stats.is_pre_order != 1) {
+      html += '<ons-list-item class="stic-options-list asap">';
+/** Fim da atualização **/
+      html += '<div class="center">';
+      html += t("Delivery Asap");
+      html += '</div>';
+      html += '<div class="right">';
+      html += '<ons-switch id="delivery_asap" class="delivery_asap" value="1" onclick="setAsap()"></ons-switch>';
+      html += '</div>';
+      html += '</ons-list-item>';
+    }
+	}
   html += '</div>';
 
   html += '</ons-list>';
@@ -2665,6 +3175,50 @@ fillAddressBook = function (data) {
   html += '</ons-select>';
   return html;
 };
+
+/** Atualização Master Hub (Minhas Modificações) **/
+fillColetaBook = function (data) {
+	var html = '';
+	html += '<ons-select name="addressbook_id" id="addressbook_id" class="full_width addressbook_id" required>';
+	$.each(data, function (key, val) {
+		is_selected = "";
+		if (val.as_default == 2) {
+			is_selected = 'selected'
+		}
+		html += '<option value="' + val.id + '" ' + is_selected + '>' + val.address + '</option>';
+	});
+	html += '</ons-select>';
+	return html;
+};
+
+fillPreColetaBook = function (data) {
+	var html = '';
+	html += '<ons-select name="addressbook_id" id="addressbook_id" class="full_width addressbook_id" required>';
+	$.each(data, function (key, val) {
+		is_selected = "";
+		if (val.as_default == 2) {
+			is_selected = 'selected'
+		}
+		html += '<option value="' + val.id + '" ' + is_selected + '>' + val.address + '</option>';
+	});
+	html += '</ons-select>';
+	return html;
+};
+
+fillRetornoBook = function (data) {
+	var html = '';
+	html += '<ons-select name="addressbook_id" id="addressbook_id" class="full_width addressbook_id" required>';
+	$.each(data, function (key, val) {
+		is_selected = "";
+		if (val.as_default == 2) {
+			is_selected = 'selected'
+		}
+		html += '<option value="' + val.id + '" ' + is_selected + '>' + val.address + '</option>';
+	});
+	html += '</ons-select>';
+	return html;
+};
+/** Fim da atualização **/
 
 var displayPaymentList = function (data) {
   var html = '';
@@ -2852,6 +3406,9 @@ accountMenu = function (login) {
 
 filAddress = function (id, data) {
   $(id + " .street").val(data.street);
+/** Atualização Master Hub (Minhas Modificações) **/
+	$(id + " .numero").val(data.numero);
+/** Fim da atualização **/
   $(id + " .city").val(data.city);
   $(id + " .state").val(data.state);
   $(id + " .zipcode").val(data.zipcode);
@@ -3224,7 +3781,9 @@ setFavoriteList = function (data, element) {
     html += '<p class="ultra-light-gray f12 concat_text">' + val.date_added + '</p>';
     html += '</ons-col>';
 
-    if (!empty(val.rating)) {
+/** Atualização Master Hub (Minhas Modificações) **/
+		if (val.rating.ratings >= 2) {
+/** Fim da atualização **/
       var reviews_qty = val.rating.review_count.match(/\d+/)[0];
       html += '<ons-col class="ratings-col text-right" vertical-align="center" width="26%">';
       html += '<span class="center bold stic-score trn">' + val.rating.ratings + '</span>';
@@ -3682,13 +4241,19 @@ setReviewList = function (data, element) {
 
         html += '<ons-list-item modifier="longdivider full_list" tappable >';
         html += '<ons-row>';
-        html += '<ons-col width="60px" vertical-align="center" >';
-        html += '<div class="is-loading xxsmall-loader">';
-        html += '<div class="spinner"></div>';
-        html += '<img class="small_avatar" src="' + val2.logo + '">';
-        html += '</div>';
-        html += '</ons-col>';
-        html += '<ons-col width="160px" vertical-align="top"><h5 class="f16">' + val2.customer_name + '</h5><p class="small">' + val2.date_posted + '</p></ons-col>';
+/** Atualização Master Hub (Minhas Modificações) **/
+				html += '<ons-col width="13%" vertical-align="center" >';
+/** Fim da atualização **/
+				html += '<div class="is-loading xxsmall-loader">';
+				html += '<div class="spinner"></div>'
+/** Atualização Master Hub (Minhas Modificações) **/
+				html += '<img class="small_avatar" src="' + val2.logo + '" style="height: 30px; width: 30px;">';
+/** Fim da atualização **/
+				html += '</div>';
+				html += '</ons-col>';
+/** Atualização Master Hub (Minhas Modificações) **/
+				html += '<ons-col width="87%" vertical-align="top"><h5 class="f16" style="font-size: 11px; color: #bf2238;">' + val2.customer_name + '</h5><p class="small" style="font-size: 10px;">' + val2.date_posted + '</p></ons-col>';
+/** Fim da atualização **/
         html += '</ons-row>';
         html += '<div class="gap"></div>';
         html += val2.review;
@@ -3963,7 +4528,9 @@ setGetRecentLocation = function (data, element_id) {
 
     //setRecentSearch = function(address, lat, lng, street, city,  state, zipcode, location_name){
     //html+='<ons-list-item class="recent_loc_child" tappable onclick="setRecentSearch('+ "'" + val.search_address + "',"+ "'"+ val.latitude + "'," +  "'"  + val.longitude + "'" +')" >';
-    params_data = clickFormat(val.search_address + "|" + val.latitude + "|" + val.longitude + "|" + val.street + "|" + val.city + "|" + val.state + "|" + val.zipcode + "|" + val.country);
+/** Atualização Master Hub (Minhas Modificações) **/
+		params_data = clickFormat( val.search_address+ "|" + val.latitude + "|"+ val.longitude + "|" + val.street  + "|" + val.numero  + "|" + val.city  + "|" + val.state  + "|" + val.zipcode  + "|" + val.location_name + "|" + val.country);
+/** Fim da atualização **/
     html += '<ons-list-item class="recent_loc_child" tappable onclick="setRecentSearch(' + params_data + ')" >';
     html += '<div class="left">';
     html += '<ons-icon icon="redo" class="list-item__icon"></ons-icon>';
@@ -4306,10 +4873,13 @@ setItemListColumn = function (data, element) {
         // col+='<p>';
         $.each(val.prices2, function (pricekey, priceval) {
           if (priceval.discount > 0.001) {
-            col += '<price> <span class="tag_discount">' + priceval.original_price + '</span>' + priceval.discounted_price_pretty + '</price>';
-          }
-          else {
-            col += '<price>' + priceval.original_price + '</price>';
+/** Atualização Master Hub (Minhas Modificações) **/
+						  	col+= '<br/><price> <span class="tag_discount">'+ priceval.original_price+'</span>' + priceval.discounted_price_pretty + '</price>';
+/** Fim da atualização **/
+						  } else {
+/** Atualização Master Hub (Minhas Modificações) **/
+						  	col+= '<br/><price>'+priceval.original_price + '</price>';
+/** Fim da atualização **/
           }
         });
         // col+='</p>';
@@ -4711,81 +5281,74 @@ setBookingDetails = function (data, element_id) {
 };
 
 
-fillStartupBanner = function (div) {
-  var html = '';
+/** Atualização Master Hub (Minhas Modificações) **/
+fillStartupBanner = function(element){
+	var list = document.getElementById( element );
+	var html=''; pager='';
+	x =0;
+	$(".startup_banner_index").val(0);
+	if(settings = getAppSettings()){	
+		contagem=settings.startup.banner.length-1;
 
-  if (app_settings = getAppSettings()) {
-    banner = app_settings.startup.banner;
+		$.each( settings.startup.banner, function( key, val ) {
+			
+			html+='<ons-carousel-item>';
 
-    if (banner.length <= 0) {
-      return;
-    }
+				html+='<div class="stic-walkthrough-img" style="background-image: url('+ "'" + val + "'" +')" ></div>';
 
-    html += '<ons-carousel fullscreen swipeable auto-scroll auto-scroll-ratio="0.1" overscrollable id="startup_carousel"  >';
-    $.each(banner, function (key, val) {
-      html += '<ons-carousel-item>';
-      html += '<div class="banner" style="background-image: url(' + "'" + val + "'" + ')"  >';
-      html += '<div class="is-loading xlarge-loader">';
-      html += '<div class="spinner"></div>';
-      html += '<img class="hide" src="' + val + '">';
-      html += '</div>';
-      html += '</div>';
+		   		if (key == contagem || key == ""+contagem+"") {
+					html+='<div class="stic-walkthrough-log is_rtl">';
+						html +='<h3 class="trn">'+ t('Titulo '+key) +'</h3>'; 
+						html +='<p class="small trn">'+ t('Descricao '+key)+'</p>'; 
+					html+='</div>';
+					
+					html+='<div class="stic-walkthrough-login is_rtl">';
 
-      if (key == 0 || key == "0") {
-        html += '<div id="skip_presentation" class="cream_header is_rtl">';
-        html += '<h3 id="walk_title" class="trn">' + t('Find restaurants nearby') + '</h3>';
-        html += '<p id="walk_desc" class="small trn">' + t('Order delicious food from your favourite restaurants with a few clicks') + '</p>';
-        html += '</div>';
-      }
+						html+='<div class="stic-start">';
+				html += '<ons-button modifier="large normal_large to_orange" onclick="showPage(\'create_account.html\')">';
+				html += '<span class="trn">' + t('Register') + '</span>';
+							html+='</ons-button>';
+			
+							html+='<ons-button modifier="large normal_large to_neutral" onclick="showPage(\'login.html\')" >';
+								html+='<span class="trn">'+ t('Sign in') +'</span>';
+							html+='</ons-button>';	
+						html+='</div>';
+					html+='</div>';
+					html+='<ons-icon class="stic-skip-icon" icon="long-arrow-alt-right" size="16px" ></ons-icon>';
+					html+='<ons-button class="stic-skip" onclick="skip(\'map_select_location.html\')" >';
+						html+='<span class="trn">'+ t('Skip') +'</span>';
+					html+='</ons-button>';
+		   		} else {
+					html+='<div class="stic-walkthrough is_rtl">';
+						html +='<h3 class="trn">'+ t('Titulo '+key) +'</h3>'; 
+						html +='<p class="small trn">'+ t('Descricao '+key)+'</p>'; 
+					html+='</div>';
+				}
 
-      if (key == 1 || key == "1") {
-        html += '<div id="skip_presentation" class="cream_header is_rtl">';
-        html += '<h3 id="walk_title" class="trn">' + t('Secure and private') + '</h3>';
-        html += '<p id="walk_desc" class="small trn">' + t('Paying trought the app is easy, fast and safe. Here your info are private') + '</p>';
-        html += '</div>';
-      }
+            html+='</ons-carousel-item>';
 
-      if (key == 2 || key == "2") {
-        html += '<div id="skip_presentation" class="cream_header is_rtl">';
-        html += '<h3 id="walk_title" class="trn">' + t('We bring it to you') + '</h3>';
-        html += '<p id="walk_desc" class="small trn">' + t('Get the order at home. You don\'t even have to get up off the couch') + '</p>';
-        html += '</div>';
-
-        html += '<div class="stic-start">';
-        html += '<ons-button modifier="large normal_large to_orange" onclick="showPage(\'create_account.html\')">';
-        html += '<span class="trn">' + t('Register') + '</span>';
-        html += '</ons-button>';
-
-        html += '<ons-button modifier="large normal_large to_neutral" onclick="showPage(\'login.html\')" >';
-        html += '<span class="trn">' + t('Sign in') + '</span>';
-        html += '</ons-button>';
-        html += '</div>';
-
-        html += '<ons-button class="stic-skip" modifier="large normal_large to_neutral" onclick="skip(\'map_select_location.html\')" >';
-        html += '<span class="trn">' + t('Skip') + '</span>';
-        html += '</ons-button>';
-      }
-
-      html += '</ons-carousel-item>';
-    });
-    html += '</ons-carousel>';
-
-    html += '<div class="stic-counter">';
-    html += '<ul class="dots">';
-    $.each(banner, function (key, val) {
-      is_selected = 'active';
-      if (key >= 1) {
-        is_selected = '';
-      }
-      html += '<li class="c' + key + ' ' + is_selected + '"><div class="circle"></div></li>';
-    });
-    html += '</ul>';
-    html += '</div>';
-
-    $(div).html(html);
-    imageLoaded();
-  }
+			var newItem = ons.createElement(html);
+	        list.appendChild(newItem);
+	        html='';
+	        
+	        selected='';
+	        if(x<=0){
+	        	selected="active";
+	        }
+	        
+	        pager+='<li class="c'+x+' '+selected+'"><div class="circle2"></div></li>';
+	        x++;
+		});
+		
+		$(".startup_banner_paging .dots2").html(pager);
+		
+	    setTimeout(function(){ 	    
+	    	runStartUpBanner(false);
+	    }, 1);
+		
+	}
 };
+/** Fim da atualização **/
 
 
 setlanguageList2 = function (data, element, selected_lang) {
@@ -5509,7 +6072,9 @@ addTermsCondition = function (element) {
   html = '';
 
   html += '<ons-list-item modifier="list_small nodivider">';
-  html += '<p class="mlat20">' + t("By creating an account, you agree to receive sms from vendor.") + '</p>';
+/** Atualização Master Hub (Minhas Modificações) **/
+	 html+='<p class="mlat20">'+ t("Ao criar uma conta, você concorda em receber sms do fornecedor.") +'</p>';
+/** Fim da atualização **/
   html += '</ons-list-item>';
 
   var newItem = ons.createElement(html);

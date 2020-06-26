@@ -319,7 +319,10 @@ initGeocomplete = function(element){
 			            map_moveMarker( 1, $resp.lat , $resp.lng );	
 			            			            					    					    
 					    $("#"+current_page_id +" .street").val( $resp.street );
-			   	  	  	$("#"+current_page_id +" .city").val( $resp.city );
+/** Atualização Master Hub (Minhas Modificações) **/
+					    $("#"+current_page_id +" .numero").val( $resp.numero );
+/** Fim da atualização **/
+			   	  	    $("#"+current_page_id +" .city").val( $resp.city );
 			   	  	    $("#"+current_page_id +" .state").val( $resp.state );
 			   	  	    $("#"+current_page_id +" .zipcode").val( $resp.zipcode );
 			   	  	  	$("#"+current_page_id +" .country").val( $resp.country );					    
@@ -354,7 +357,9 @@ initGeocomplete = function(element){
 				$(".mapbox_s_goecoder input").attr("id","search_address");
 				$(".mapbox_s_goecoder input").attr("placeholder", t("Search for your location") );	
 				$(".mapbox_s_goecoder input").attr("autocomplete","off");
+/** Atualização Master Hub (Minhas Modificações) **/
 				$("#map_enter_address  .stic-icon").hide();
+/** Fim da atualização **/
 				
 				geo_suggestion.on('result', function(results) {
 									    
@@ -998,6 +1003,13 @@ map_setLangLngValue = function(lat, lng){
 	$(".lng").val( lng );	  		    
 };
 
+/** Atualização Master Hub (Minhas Modificações) **/
+map_setEnderecoValue = function(){
+	lat = $(".lat").val();
+	lng = $(".lng").val();
+	geoCodeMapa(lat,lng);
+};
+/** Fim da atualização **/
 
 viewExternalDirection = function(){
 	merchant_lat = $(".merchant_lat").val();
@@ -1059,6 +1071,9 @@ GeocodeLat = function(lat, lng){
 			   	  	  	 } 
 			   	  	  	 
 			   	  	  	 $("#"+current_page_id +" .street").val( $resp.street );
+/** Atualização Master Hub (Minhas Modificações) **/
+			   	  	  	 $("#"+current_page_id +" .numero").val( $resp.numero );
+/** Fim da atualização **/
 			   	  	  	 $("#"+current_page_id +" .city").val( $resp.city );
 			   	  	  	 $("#"+current_page_id +" .state").val( $resp.state );
 			   	  	  	 $("#"+current_page_id +" .zipcode").val( $resp.zipcode );
@@ -1153,13 +1168,15 @@ parseAdress = function(results){
 		return false;
 	}
 	
-	var street='',city='',state='',zipcode='', kountry='',formatted_address='';
+	var street='',numero='',city='',state='',zipcode='', kountry='',formatted_address='';
 	
 	formatted_address = results[0].formatted_address;
 	
 	$.each(results[0].address_components, function(reskey, resval){			   	  	  	 	
 		$.each(resval.types, function(types_key, types_val){			   	  	  	 		
-			if (types_val=="street_number" || types_val=="route" || types_val=="street_address"  ){
+/** Atualização Master Hub (Minhas Modificações) **/
+			if (types_val=="route" || types_val=="street_address"  ){
+/** Fim da atualização **/
 				if(!empty(street)){
 					street+= " " + resval.long_name;  
 				} else {
@@ -1167,6 +1184,16 @@ parseAdress = function(results){
 				}			   	  	  	 			
 			}
 			
+/** Atualização Master Hub (Minhas Modificações) **/
+			if (types_val=="street_number"){
+				if(!empty(numero)){
+					numero+= " " + resval.long_name;  
+				} else {
+					numero+=resval.long_name;
+				}			   	  	  	 			
+			}
+/** Fim da atualização **/
+
 			if (types_val=="locality" || types_val=="administrative_area_level_3" ){
 				if(!empty(city)){
 					city+= " " + resval.long_name;  
@@ -1205,6 +1232,7 @@ parseAdress = function(results){
 	 geocoded_address = {
 	 	'formatted_address': formatted_address,
 		'street' : street,
+		'numero' : numero,
 		'city' : city,
 		'state' : state,
 		'zipcode' : zipcode,
