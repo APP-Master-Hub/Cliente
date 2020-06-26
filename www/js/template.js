@@ -2046,7 +2046,7 @@ var displayCartDetails = function (datas) {
 
   html += '<div class="cream_header">';
 /** Atualização Master Hub (Minhas Modificações) **/
-	html+='<div class="wrap" style="border-radius: 30px;margin-top: -52px;z-index: 32;background-color: white;">';
+	html+='<div class="wrap dark-cart" style="border-radius: 30px;margin-top: -52px;z-index: 32;background-color: white;">';
 		html+='<h3 class="block trn" style="font-size: 18px;padding: 10px 0px 10px 0px;">'+t("Order details")+'</h3>';
 /** Fim da atualização **/
   html += '<p class="small inline trn">' + t("You're ordering at") + '</p>';

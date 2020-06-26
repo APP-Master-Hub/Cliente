@@ -180,22 +180,29 @@ p.small {
   position: absolute;
   width: 100%;
   text-align: center;
-  bottom: 17%;
+  bottom: 30%;
 }
 
 .stic-start .button--to_neutral {
-  margin-left: 5px;
-  border-radius: 3px;
-  border: .5px solid #c2c4cc;
-  padding: 0;
-  width: 140px;
+	margin-left: 5px;
+	border-radius: 9px !important;
+	border: 0px solid #c2c4cc;
+	padding: 0;
+	width: 140px;
+	background-color:#0A4F00;
+	color: #FFFFFF;
 }
 
 .stic-start .button--to_orange {
-  margin-right: 5px;
-  border-radius: 3px;
-  padding: 0;
-  width: 140px;
+	margin-right: 5px;
+	border-radius: 9px !important;
+	padding: 0;
+	width: 140px;
+}
+
+.stic-start {
+	margin-top: 20px;
+	text-align: center;
 }
 
 .br5 {
@@ -225,7 +232,7 @@ p.small {
 }
 
 .stic-darkblue {
-	color: #2E3B49 !important;
+	color: #770007 !important;
 }
 /** Fim da atualização **/
 
@@ -299,7 +306,7 @@ p.small {
   text-transform: uppercase;
   font-size: 13px !important;
   font-weight: bold;
-  color: #770007 !important;
+  color: #10bc69 !important;
 }
 
 /** Atualização Master Hub (Personalização) **/
@@ -307,7 +314,7 @@ p.small {
     text-transform: uppercase;
     font-size: 9px !important;
     font-weight: bold;
-    color: #770007 !important;
+    color: #10bc69 !important;
 }
 /** Fim da atualização **/
 
@@ -753,7 +760,7 @@ flex: 0 0 100%;
 .stic-walkthrough {
 	margin: 0px 4% 0px 14%;
     position: absolute;
-    height: 170px;
+    height: 215px;
     right: 0px;
     bottom: 0px;
     text-align: -webkit-center;
@@ -763,7 +770,7 @@ flex: 0 0 100%;
 .stic-walkthrough-login {
  	position: absolute;
     width: 100%;
-    height: 235px;
+    height: 140px;
     float: inherit;
     margin-bottom: 0;
     right: 0px;
@@ -772,7 +779,7 @@ flex: 0 0 100%;
 .stic-walkthrough-log {
 	position: absolute;
     width: 100%;
-    height: 190px;
+    height: 247px;
     float: inherit;
     margin-bottom: 0;
     right: 0px;
@@ -793,28 +800,6 @@ flex: 0 0 100%;
     background-position: center;
     background-size: cover;
 	z-index: -1;
-}
-
-.stic-start {
-	margin-top: 20px;
-	text-align: center;
-}
-
-.stic-start .button--to_neutral {
-	margin-left: 5px;
-	border-radius: 9px !important;
-	border: 0px solid #c2c4cc;
-	padding: 0;
-	width: 140px;
-	background-color:#8B0202;
-	color: #FFFFFF;
-}
-
-.stic-start .button--to_orange {
-	margin-right: 5px;
-	border-radius: 9px !important;
-	padding: 0;
-	width: 140px;
 }
 
 .startup_banner_carousel {
@@ -1006,7 +991,7 @@ ons-pull-hook {
 }
 #home ons-toolbar {
 /** Atualização Master Hub (Personalização) **/
-  background: #770007;
+  background: #770007 !important;
 /** Fim da atualização **/
   /* height: 35px; */
   z-index: 1;
@@ -1021,7 +1006,7 @@ ons-pull-hook {
 
 #home .page--material__background {
 /** Atualização Master Hub (Personalização) **/
-  background: #770007;
+  background: #770007 !important;
 /** Fim da atualização **/
 }
 
@@ -1033,7 +1018,7 @@ ons-pull-hook {
 
 .home-search-section {
 /** Atualização Master Hub (Personalização) **/
-  background: #770007;
+  background: #770007 !important;
 /** Fim da atualização **/
   position: relative;
   height: 23px;
@@ -1072,19 +1057,19 @@ ons-pull-hook {
 }
 
 .hatake {
-  color: #770007;
+  color: #10bc69;
 }
 
 .darkblue,
 .active .tabbar--material__button {
 /** Atualização Master Hub (Personalização) **/
-  color: #770007;
+  color: #2E3B49;
 /** Fim da atualização **/
 }
 
 .darkblue-bg {
 /** Atualização Master Hub (Personalização) **/
-  background: #770007;
+  background: #770007 !important;
 /** Fim da atualização **/
 }
 
@@ -1226,7 +1211,7 @@ ons-pull-hook {
 
 .home-user-section {
 /** Atualização Master Hub (Personalização) **/
-    background: #770007;
+  background: #770007 !important;
 /** Fim da atualização **/
   padding: 20px 0 10px;
 }
@@ -1251,6 +1236,7 @@ ons-pull-hook {
 
 .home-user-lateral {
   padding: 0 20px;
+  background: #770007;
 }
 
 #creditcard_list span,
@@ -1741,7 +1727,7 @@ ons-pull-hook {
 }
 
 .stic-list-promo p.small {
-  color: #770007;
+  color: #10bc69;
 }
 
 .stic-list-cuisine h4,
@@ -1765,13 +1751,8 @@ ons-pull-hook {
 }
 
 .fill-black {
-  fill: #2E3B49 !important;
+  fill: #770007 !important;
 }
-/** Atualização Master Hub (Personalização) **/
-.background-white {
-	background: white !important;
-}
-/** Fim da atualização **/
 
 .min-offers-carousel {}
 
@@ -2020,13 +2001,13 @@ ons-pull-hook {
 
 #resto_list_category ons-list-item,
 #resto_list_item ons-list-item {
-  background: #fcfcfc;
+  background: /*#fcfcfc;*/
   background-image: none;
   border-bottom: .75px solid #edeefc;
 }
 
 #resto_list_category .list-item__top {
-  border-bottom: .75px solid #edeefc;
+  /*border-bottom: .75px solid #edeefc;*/
 }
 
 .cart-btn {
@@ -2076,7 +2057,7 @@ ons-pull-hook {
 }
 
 .stic-desc-full .button--link_button {
-  color: #770007;
+  color: #10bc69;
   font-size: 14px;
   margin-top: 10px;
   text-decoration: underline;
@@ -2256,7 +2237,7 @@ ons-pull-hook {
 
 .stic-options-list.address .right span {
   margin: auto;
-  color: #770007;
+  color: #10bc69;
 }
 
 .stic-options-list.list-item--chevron:before {
@@ -2377,14 +2358,43 @@ font-size: 13px;
   text-align: right;
 }
 
+/** Atualização Master Hub (Personalização) **/
 .stic-skip {
-  position: absolute;
-  top: 5px;
-  right: 20px;
-  border: none;
-  padding: 0;
-  color: #2E3B49;
+	color: #2E3B49 !important;
+    background: none;
+    position: absolute;
+    width: 90px;
+    height: 20px;
+    float: inherit;
+    margin-bottom: 0;
+    right: -6px;
+    bottom: 3px;
 }
+
+.stic-skip-icon {
+	color: #2E3B49 !important;
+    background: none;
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    float: inherit;
+    margin-bottom: 0;
+    right: 25px;
+    bottom: 11px;
+}
+
+.stic-skip-log {
+color: #2E3B49 !important;
+    background: none;
+    position: absolute;
+    width: 90px;
+    height: 20px;
+    float: inherit;
+    margin-bottom: 0 !important;
+    right: -34px;
+    bottom: 9px;
+}
+/** Fim da atualização **/
 
 #restaurant_page .green_tag {
   left: unset;
@@ -2426,7 +2436,7 @@ font-size: 13px;
 
 .stic-food-promo .stic-cuisine {
   color: #fff;
-  background: #770007;
+  background: #10bc69;
   border-radius: 3px;
   padding: 0 4px;
   font-size: 14px;
@@ -2465,7 +2475,7 @@ font-size: 13px;
 }
 
 .stic-food-promo .min-carousel-wrap p {
-  color: #770007;
+  color: #10bc69;
 }
 
 .stic-promo-shadow {
@@ -2550,7 +2560,7 @@ font-size: 13px;
 
 .stic-column .col-title {
   font-size: 16px;
-  color: #2E3B49;
+  /* color: #2E3B49; */
   display: inline;
 }
 

@@ -1,6 +1,6 @@
 .page--orange_bg__background {
 /** Atualização Master Hub (Personalização) **/
-   background: #770007;
+  background: #770007;
 /** Fim da atualização **/
 }
 
@@ -54,7 +54,7 @@ p.small,
 
 .list-item--list_small a {
 /** Atualização Master Hub (Personalização) **/
-color:#83868f;
+  color: #626573;
 /** Fim da atualização **/
 }
 
@@ -159,7 +159,7 @@ p.small.padding {
 .button--to_orange,
 .progress-bar--material__primary,
 .fixed_toolbar_orange {
-   background: #770007;
+  background: #770007;
 }
 
 .button--to_green {
@@ -173,7 +173,7 @@ p.small.padding {
 }
 
 .button--rounded_button {
-   background: #770007;
+  background: #10bc69;
   font-size: 15px;
   line-height: 46px;
   height: 46px;
@@ -221,11 +221,11 @@ price,
 .toolbar-button--to_text_orange,
 #restaurant_page .toolbar-button--to_text_orange,
 .list-item--list_type_list1 ons-icon {
-   color: #770007;
+  color: #10bc69;
 }
 
 .orange_color {
-   color: #770007; !important;
+  color: #10bc69 !important;
 }
 
 .button--text_blue,
@@ -573,7 +573,7 @@ width:100%;*/
 .green_tag,
 .pink_tag,
 .sponsored_tag {
-  background: #770007;
+  background: #10bc69;
   color: #fff;
   letter-spacing: 1px;
   left: 0;
@@ -805,7 +805,7 @@ padding-left:5px;*/
 }
 
 .button--sort_btn {
-  color: #770007;
+  color: #10bc69;
   line-height: inherit;
   min-height: inherit;
   padding: 0 0 0 5px;
@@ -879,7 +879,7 @@ padding-left:5px;*/
 }
 
 span.highlight {
-  color: #770007;
+  color: #10bc69;
 }
 
 .list--list_cuisine_style ons-list-item,
@@ -1068,7 +1068,7 @@ span.highlight {
 
 .carousel_resto_menu ons-carousel-item.selected,
 .carousel_small ons-carousel-item.selected {
-  border-bottom: 3px solid #770007;
+  border-bottom: 3px solid #10bc69;
 }
 
 .carousel_white {
@@ -1158,7 +1158,7 @@ span.highlight {
 }
 
 .button--green_button {
-  background: #770007;
+  background: #10bc69;
 }
 
 .full_width {
@@ -1166,7 +1166,7 @@ span.highlight {
 }
 
 .quantity_wrap ons-button {
-  background: #770007;
+  background: #10bc69;
   font-size: 22px;
   color: #fff;
   border-radius: 5px;
@@ -1347,7 +1347,7 @@ ons-button .equal_table {
 }
 
 .button--skip_button {
-  color: #770007;
+  color: #10bc69;
   line-height: inherit;
   min-height: auto;
   padding: 0;
@@ -1372,8 +1372,8 @@ ons-button .equal_table {
 #receipt h3,
 #driver_ty h3,
 #booking_receipt h3 {
-  color: #770007;
-  text-shadow: 1px 0 #770007;
+  color: #10bc69;
+  text-shadow: 1px 0 #10bc69;
   background: #fff;
   padding: 10px 20px;
   border-radius: 40px;
@@ -1861,7 +1861,7 @@ summary-wrap .col-md-6,
 }
 
 .button--button_small {
-  color: #770007;
+  color: #10bc69;
   font-family: "GoogleSans";
   font-size: 12px;
   font-weight: 600;
@@ -2125,7 +2125,7 @@ text-transform: capitalize;*/
 .spinner.small {
   height: 10px;
   width: 10px;
-  border: 5px solid #770007;
+  border: 5px solid #10bc69;
 }
 
 @keyframes rotate {

@@ -36,6 +36,18 @@ ons-bottom-toolbar {
   color: #131417;
 }
 
+.dark-cart{
+	background-color: #131417 !important;
+}
+
+.stic-options-list-address.address .right span{
+	color: #10bc69;
+}
+
+.stic-address-row{
+	background: none !important;
+}
+
 .page--page_white__background,
 .white_wrapper,
 .white_wrap {
@@ -248,7 +260,7 @@ p.small,
 }
 
 .banner .logo {
-  background: #131417;
+  /* background: #131417; */
   border: 2px solid #3d4354;
 }
 
