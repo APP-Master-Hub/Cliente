@@ -17,10 +17,10 @@ var push_handle;
 var translator;
 var dict = {};
 
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
 var device_id = 'device_web_masterhub';
 var device_uiid = 'uiid_web_masterhub';
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 var device_platform = 'android';
 var code_version = 1.5; // don't change this value
 
@@ -108,9 +108,9 @@ ons.ready(function() {
 		
 	if (ons.platform.isIPhoneX()) {		
 	    document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
     $('head').append('<link rel="stylesheet" href="css/ios.css?ver=1.0" type="text/css" />');
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	}
 	
 	// fix to autocomplete search address bar
@@ -248,9 +248,9 @@ function onDeviceReady(){
 		device_platform = device.platform;		
 		
 		if(device.platform=="android" || device.platform=="Android" ){
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 		   StatusBar.backgroundColorByHexString("#770007");
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 		}
 				
 		initFirebasex();
@@ -358,11 +358,11 @@ document.addEventListener('init', function(event) {
       
    translatePage();
    
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
    /* if(page_id!="page_startup2"){
    	  StopStartUpBanner();
    } */
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    
    switch(page_id)
    {
@@ -385,9 +385,9 @@ document.addEventListener('init', function(event) {
    	  case "login":
    	     	   
    	    placeholder(".user_mobile", "Mobile number or Email" );
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 			placeholder(".password", "Password");
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	  
    	    next_step = getStorage("next_step");
    	    dump("next_step=>"+ next_step);
@@ -449,9 +449,9 @@ document.addEventListener('init', function(event) {
    	     }
    	     
    	     /*placeholder(".street", t("Street") );
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 			placeholder(".numero", t("Numero"));
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	     placeholder(".city", t("City") );
    	     placeholder(".state", t("State") );
    	     placeholder(".zipcode", t("Zip Code") );
@@ -729,9 +729,9 @@ document.addEventListener('init', function(event) {
 	         }, 1); 
          }
    	     
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       placeholder(".looking_for", t("Looking for something?"));
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	  break;
    	  
    	  case "item_page":
@@ -816,9 +816,9 @@ document.addEventListener('init', function(event) {
    	  case "cart":   	    
    	    
    	    if(app_settings = getAppSettings()){   	    	
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
         $(".no_order_wrap img").attr("src", "lib/icons/empty.svg");
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	    }
    	    $(".min_delivery_order").val('');
    	    
@@ -879,9 +879,9 @@ document.addEventListener('init', function(event) {
    	  
    	   case "payment_option":   	    	         	     
    	     
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       $(".pay_now_label").html(t("PAY"));
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	      params = "transaction_type=" + $(".transaction_type").val();
 
    	      opt_contact_delivery = $("input[name=opt_contact_delivery]:checked").val();		
@@ -914,9 +914,9 @@ document.addEventListener('init', function(event) {
                        
    	     }
    	     
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       $(".pay_now_label").html(t("PAY"));
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	        	     
    	     placeholder("#dinein_number_of_guest", "Number Of Guests" );   	     
    	     placeholder("#dinein_table_number", "Table number" );
@@ -947,9 +947,9 @@ document.addEventListener('init', function(event) {
    	  
    	  case "address_form":   	      	    
    	    placeholder(".street", "Street" );
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 			placeholder(".numero", "Numero");
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	    placeholder(".city", "City" );
    	    placeholder(".state", "State" );
    	    placeholder(".zipcode", "Zip Code" );
@@ -1107,9 +1107,9 @@ document.addEventListener('init', function(event) {
    	  
    	  case "view_order":   	    
    	    order_id = page.data.order_id;
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       $(".order_id").html(t("Order ID #") + "" + order_id);
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	    processAjax('ViewOrder','order_id='+ order_id ,'GET','skeleton2');   	    
    	    AnalyticsTrack("page view order"); 
    	  break;
@@ -1166,9 +1166,9 @@ document.addEventListener('init', function(event) {
    	  
    	  case "address_book":   	     	   
    	    placeholder(".street", "Street" );
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 			placeholder(".numero", "Numero");
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	    placeholder(".city", "City" );
    	    placeholder(".state", "State" );
    	    placeholder(".zipcode", "Zip Code" );
@@ -1191,9 +1191,9 @@ document.addEventListener('init', function(event) {
    	    placeholder("#first_name", "First Name" );
    	    placeholder("#last_name", "Last Name" );
    	    placeholder("#contact_phone", "Mobile no." );   	       	  
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       placeholder("#email_address", "Email");
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	    processAjax('GetProfile',"",'GET', 'skeleton3');   	    
    	    
    	    AnalyticsTrack("page edir profile");
@@ -1439,17 +1439,17 @@ document.addEventListener('init', function(event) {
    	  break;
    	  
    	  case "select_creditcards":
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       $("#select_creditcards .pay_now_label").html(t("PAY"));
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	      processDynamicAjax('CrediCartList','','select_creditcards_loader','GET',1 ); 
    	      initPullHook('select_creditcards', 'select_creditcards_pull_hook');
    	  break;
    	  
    	  case "select_payondelivery":
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       $("#select_payondelivery .pay_now_label").html(t("PAY"));
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	     params  = addMerchantParams();
    	     processDynamicAjax('PayOnDeliveryCardList', params ,'payondelivery_loader','GET',1 ); 
    	     initPullHook('payondelivery_list', 'payondelivery_pull_hook', params );
@@ -1474,9 +1474,9 @@ document.addEventListener('init', function(event) {
 	    };
    	    
    	    total_amount = page.data.total_amount;   	  
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       $("#authorize_form .pay_now_label").html(t("PAY"));
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	    $("#authorize_form .order_id").val( page.data.order_id  );
    	    processAjax('getCountryList',"");
    	  break;
@@ -1584,7 +1584,7 @@ document.addEventListener('init', function(event) {
    	  break;
    	  
    	  case "page_startup2":
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
    	    less = 220;
    	    if (ons.platform.isIPhoneX()) {
    	    	less = 300;
@@ -1597,7 +1597,7 @@ document.addEventListener('init', function(event) {
    	    /*setTimeout(function() {
    	    	initStartUpBanner();
    	    }, 100);*/
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	  break;
    	  
    	  case "page_startup_select_language":
@@ -1747,9 +1747,9 @@ document.addEventListener('init', function(event) {
    	    }); 
    	    
    	    placeholder("#frm_address_book_location .street", "Street" );
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 			placeholder("#frm_address_book_location .numero", "Numero");
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	    placeholder("#frm_address_book_location .state_name", "State/Region" );
    	    placeholder("#frm_address_book_location .city_name", "City" );
    	    placeholder("#frm_address_book_location .area_name", "Distric/Area/neighborhood" );
@@ -1811,9 +1811,9 @@ document.addEventListener('init', function(event) {
         if(is_agree_map!=1){
 	        ons.platform.select('ios');  
 		    ons.notification.confirm( t("Please point your exact location on the map") ,{
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 					title: t("Select your address"),
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 				id : "dialog_remove_item",
 				buttonLabels : [ t("OK") ]
 			}).then(function(input) {
@@ -1844,9 +1844,9 @@ document.addEventListener('init', function(event) {
    	    }); 
    	    
    	    placeholder("#frm_address_form_location .street", "Street" );
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 			placeholder("#frm_address_form_location .numero", "Numero");
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	    placeholder("#frm_address_form_location .state_name", "State/Region" );
    	    placeholder("#frm_address_form_location .city_name", "City" );
    	    placeholder("#frm_address_form_location .area_name", "Distric/Area/neighborhood" );
@@ -1870,7 +1870,7 @@ document.addEventListener('init', function(event) {
 	   	}
       break;  
       
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 		case "coleta_form_location":
 
 			is_agree_map = getStorage("is_agree_map");
@@ -2062,7 +2062,7 @@ document.addEventListener('init', function(event) {
 				$(".contact_phone").val(customer_number);
 			}
 			break;
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 
       case "location_postal_code":
         dump("is_address_book=>"+page.data.address_book);
@@ -2243,9 +2243,9 @@ loadHomePage = function(){
     }
     
     if(isLogin()){
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
     processAjax('GetUserinfo', "");
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	    if(app_settings.home.mobile2_home_favorite_restaurant==1){
 	       processDynamicAjax('searchMerchant', 'search_type=favorites', 'favorite_restaurant_wrapper');
 	    } else {
@@ -2277,13 +2277,13 @@ loadHomePage = function(){
     } else {
     	$("#food_list_wrapper").hide();
     }    
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
   placeholder(".home_search", t("What are you looking for?"));
   // translatePage();
   setTimeout(function () {
     rtlCarousel();
   }, 500);
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 }
 
 addMerchantParams = function(){
@@ -2308,11 +2308,11 @@ document.addEventListener('postpop', function(event) {
 		case "page_startup":
 		break;
 		
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 	/*	case "page_startup2":
 		  initStartUpBanner();
 		break;*/
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 		
 		case "tabbar":
 		      removeStorage("active_merchant_category");
@@ -2389,11 +2389,11 @@ document.addEventListener('postpop', function(event) {
 	      stopTrackHistory();
 	    break;
 	    
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 		case "startup_banner":		  
 		  runStartUpBanner(false);
 		break;
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 		
 	    case "payment_option":	    	      
 	    break;
@@ -2432,7 +2432,7 @@ document.addEventListener('postpop', function(event) {
 	       }	       
 	    break;
 	    
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 		case "coleta_book_location":
 		case "coleta_form_location":
 		case "pre_coleta_book_location":
@@ -2468,7 +2468,7 @@ document.addEventListener('postpop', function(event) {
 				$(".area_id").val('');
 			}
 			break;
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 
 	    case "select_location":
 	    
@@ -2565,7 +2565,7 @@ document.addEventListener('postchange', function(event) {
 		break;
 		
 		case "page_startup2":
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 	    dump("carousel=>"+event.carousel.id);
 	    if(event.carousel.id=="startup_banner_carousel"){
 				console.log('Changed to ' + event.activeIndex);
@@ -2576,7 +2576,7 @@ document.addEventListener('postchange', function(event) {
 			/*  if (event.activeIndex == 2 || event.activeIndex == '2') {
 			  	StopStartUpBanner();
 			}*/
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 		  }
 		break;
 		
@@ -2821,22 +2821,22 @@ requestParams = function(action){
 			
 	switch(action){
    	  case "setDeliveryAddress":
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 		case "setColetaAddress":
 		case "setPreColetaAddress":
 		case "setRetornoAddress":
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	  case "SetLocation":
    	  case "StateList":
    	  case "CityList":
    	  case "AreaList":
    	  case "saveAddressBookLocation":
    	  case "setDeliveryLocation":
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 		case "setColetaLocation":
 		case "setPreColetaLocation":
 		case "setRetornoLocation":
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
    	  case "mapboxgeocode":
    	  case "saveAddressBook":
    	  break;
@@ -3022,9 +3022,9 @@ processAjax = function(action, data , method, loader_type){
 	        	case "customerLogin":	        
 	        	
 	        	  setStorage('user_token', data.details.client_info.token );
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
             setStorage('user_firstname', data.details.client_info.first_name);
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	        	  
 	        	  next_step = getStorage("next_step");
 	        	  dump("next_step=>"+ next_step);
@@ -3039,13 +3039,13 @@ processAjax = function(action, data , method, loader_type){
 	        	case "registerUsingFb":       
 	        	case "googleLogin":	
 
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 	        	if(!empty(data.get.first_name)) {
             		setStorage('user_firstname', data.get.first_name );	
 	        	} else {
 	        	 	var user_firstname = getStorage("user_firstname_social");	
 	        	}
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	        	
 	        	  dump("next step=>"+ data.details.next_step );      	
 	        	
@@ -3108,7 +3108,7 @@ processAjax = function(action, data , method, loader_type){
 		        	  
 		        	  list_type = getListType(); 	
 		        	  dump("list_type=>"+ list_type);
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
 		        //	  if(list_type==1){
 		        	  	 restaurantList(data.details.list,'list_restaurant');
 		        //	  } else if ( list_type == 3) {
@@ -3116,7 +3116,7 @@ processAjax = function(action, data , method, loader_type){
 		        //	  } else {
 		        //	  	 restaurantListWithBanner(data.details.list, 'list_restaurant');
 		        //	  }
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 		        	  initRatyStatic();
 	        	  }	        	  	   
 	        	  	        	  
@@ -3191,11 +3191,11 @@ processAjax = function(action, data , method, loader_type){
 	        	  	  $("#item_details ons-bottom-toolbar").hide();
 	        	  }
 						
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 	if (data.details.data.item_de_servico == "2" || data.details.data.item_de_servico == 2) {
 		 $(".quantity_wrap").hide();
 	}
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 
 	        	   if(settings = getAppSettings()){
 					if(settings.website_hide_foodprice=="yes"){
@@ -3297,7 +3297,7 @@ processAjax = function(action, data , method, loader_type){
 	        	  $('.address_book_wrap').html( tpl );
 	        	break;	        	
 	        	
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 					case "getColetaBookDropDown":
 						tpl = fillColetaBook(data.details.data);
 						$('.coleta_book_wrap').html(tpl);
@@ -3312,7 +3312,7 @@ processAjax = function(action, data , method, loader_type){
 						tpl = fillColetaBook(data.details.data);
 						$('.coleta_book_wrap').html(tpl);
 						break;
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 
 	        	case "setDeliveryAddress":	       
 	        	case "setAddressBook": 		
@@ -3361,7 +3361,7 @@ processAjax = function(action, data , method, loader_type){
 				   }, 10);
 	        	break;
 	        	
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 					case "setColetaAddress":
 					case "setColetaBook":
 					case "setColetaLocation":
@@ -3502,7 +3502,7 @@ processAjax = function(action, data , method, loader_type){
 							loadCart();
 						}, 10);
 						break;
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 
 	        	case "loadPaymentList":
 		    	  tpl = displayPaymentList(data.details.data);
@@ -3554,9 +3554,9 @@ processAjax = function(action, data , method, loader_type){
 	        	  $("#add_review h5").html( data.details.data.merchant_name );
 	        	  $("#add_review .print_trans").html( data.details.data.transaction );
 	        	  $("#add_review .print_payment_type").html( data.details.data.payment_type );
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
             $("#add_review .print_order_status").html(data.details.data.status);
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	        	  
 	        	  $("#add_review .review").val( data.details.data.review );
 	        	  $("#add_review .order_id").val( data.details.data.order_id );
@@ -3650,7 +3650,7 @@ processAjax = function(action, data , method, loader_type){
 			      processDynamicAjax('AddressBookList',params,'addressbook_loader','GET',1 ); 
 	        	break;
 	        	
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
           case "saveDarkMode":
             var stic_dark_theme = $("input[name=stic_dark_theme]:checked").val();
             if (empty(stic_dark_theme)) {
@@ -3658,7 +3658,7 @@ processAjax = function(action, data , method, loader_type){
             }
             applyDarkTheme(stic_dark_theme);
             break;
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	        	case "getCountryList":
 	        	  current_page_id = onsenNavigator.topPage.id;
 	        	  //fillCountry("#address_book", data.details.country_list, data.details.country_code);
@@ -3668,9 +3668,9 @@ processAjax = function(action, data , method, loader_type){
 	        	case "getAddressBookByID":
 	        	  fillCountry("#address_book", data.details.data.country_list, data.details.data.country_code);
 	        	  setValue(".street", data.details.data.street);
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 						setValue(".numero", data.details.data.numero);
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	        	  setValue(".city", data.details.data.city);
 	        	  setValue(".state", data.details.data.state);
 	        	  setValue(".zipcode", data.details.data.zipcode);
@@ -3710,22 +3710,22 @@ processAjax = function(action, data , method, loader_type){
 					  
 					  $("#edit_profile .header_about").css('background-image', 'url('+ "'" + background_url + "'" +')');
 					  //$("#edit_profile .header_about_img").attr("src", background_url );
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
               // $(".print_customer_name").html( data.details.data.full_name);
               // $(".print_customer_email").html( data.details.data.email_address);
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 		        	  setValue("#first_name", data.details.data.first_name );
 		        	  setValue("#last_name", data.details.data.last_name );
 		        	  setValue("#contact_phone", data.details.data.contact_phone );		        	  
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
               setValue("#email_address", data.details.data.email_address);
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 		        	  $("#edit_profile img.small_avatar").attr("src", data.details.data.avatar );
 	        	  }	        	  
 	        	  imageLoaded(); 
 	        	break;
 	        	
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
           case "GetUserinfo":
             is_dark_enabled = document.getElementById('dark_theme');
             setStorage("stic_dark_theme", data.details.data.stic_dark_theme)
@@ -3736,7 +3736,7 @@ processAjax = function(action, data , method, loader_type){
               }
             }
             break;
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	        	case "GetMerchantAbout":
 	        	  merchantAbout( data.details.data , "#about_wrapper");
 	        	  initRatyStatic();
@@ -3926,9 +3926,9 @@ processAjax = function(action, data , method, loader_type){
 	        	
 	        	 case "getItemByCategory":	
     		  
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
             // $("#item_page .print_category_name").html( data.details.category.category_name );
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
     		     
     		         		     
     		     setCategoryCarousel( data.details.category_list , data.details.category.cat_id );    		     
@@ -4083,9 +4083,9 @@ processAjax = function(action, data , method, loader_type){
 	              $("#cancel_order_form h5").html( data.details.data.merchant_name );
 	        	  $("#cancel_order_form .print_trans").html( data.details.data.transaction );
 	        	  $("#cancel_order_form .print_payment_type").html( data.details.data.payment_type );
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
             $("#cancel_order_form .print_order_status").html(data.details.data.status);
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	        	  $("#cancel_order_form .thumbnail").attr("src", data.details.data.logo);
 	        	  imageLoaded(); 
 	            break;
@@ -4218,7 +4218,7 @@ processAjax = function(action, data , method, loader_type){
 	        	  $('#address_form_select_location .address_book_wrap').html( tpl );
 	        	break;	 
 	        		        		        	
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 					case "getColetaLocationBookDropDown":
 						tpl = fillColetaBook(data.details.data);
 						$('#coleta_form_select_location .coleta_book_wrap').html(tpl);
@@ -4233,7 +4233,7 @@ processAjax = function(action, data , method, loader_type){
 						tpl = fillRetornoBook(data.details.data);
 						$('#retorno_form_select_location .retorno_book_wrap').html(tpl);
 						break;
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 
 	        	case "preCheckout":
 	        		        	
@@ -4378,9 +4378,9 @@ processAjax = function(action, data , method, loader_type){
      			
      			case "getItemByCategory":	
      			$("#resto_list_item").html('');			  	
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
             // $("#item_page .print_category_name").html( data.details.category.category_name );
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
     		     $(".item_loader").html( "<p class=\"small padding\">"+data.msg+"</p>" );
     		    break; 
     		    
@@ -4819,7 +4819,7 @@ processDynamicAjax = function(action, data , target,  method , single_call){
     			  	  
     			  } else if ( data.details.page_action=="infinite_scroll") {
     			  	  fillRestaurantList(data.details.list);
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
             	  } else if (search_type == "allMerchant") {
             resp = MerchantList(data.details.list);
             $("." + target).html(resp);
@@ -4832,7 +4832,7 @@ processDynamicAjax = function(action, data , target,  method , single_call){
             	  } else if (search_type == "featuredMerchant") {
             resp = MerchantFeatured(data.details.list);
             $("." + target).html(resp);
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
     			  } else {
     			  	  resp = MerchantCarousel( data.details.list );
     			      $("."+ target).html( resp );    		    			          			     
@@ -4904,9 +4904,9 @@ processDynamicAjax = function(action, data , target,  method , single_call){
     			
     		  case "getItemByCategory":	
     		      		     
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
           // $("#item_page .print_category_name").html( data.details.category.category_name );
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
     		     setCategoryCarousel( data.details.category_list , data.details.category.cat_id );
     		     
     		     if ( data.details.page_action=="pull_refresh"){ 
@@ -5493,9 +5493,9 @@ processDynamicAjax = function(action, data , target,  method , single_call){
 	        	 break;   		
 	        	 
 	        	case "getItemByCategory":		        	 
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
           // $("#item_page .print_category_name").html( data.details.category.category_name );
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
     		     setCategoryCarousel( data.details.category_list , data.details.category.cat_id );	  
     		     $("."+ target).html( "<p class=\"small padding\">"+data.msg+"</p>" );
     		    break; 
@@ -5564,7 +5564,7 @@ processDynamicAjax = function(action, data , target,  method , single_call){
 	
 };
 
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 buscaNoArray = function (what, item, find){
     for(var i= 0, L= what.length; i<L; i++){
         if(what[i][item]=== find) 
@@ -5572,7 +5572,7 @@ buscaNoArray = function (what, item, find){
     }
     return false
 }
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 
 showRestaurantList = function(search_type){
    onsenNavigator.pushPage("restaurant_list.html",{
@@ -6716,7 +6716,7 @@ initInfiniteScroll = function(object, action , element_id, datas){
 };
 /*end initInfiniteScroll*/
 
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 geoCodeMapa = function(){
 	//processDynamicAjax("geoCode","lat=" + $(".selected_lat").val() + "&lng=" + $(".selected_lng").val() );
 	params = "lat=" + $(".lat").val();
@@ -6724,7 +6724,7 @@ geoCodeMapa = function(){
 		
 	processDynamicAjax("geoCodeMapa", params);
 };
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 
 resetPaginate = function(element){
 	$( element + " .paginate_total").val( 0 );
@@ -7096,21 +7096,21 @@ var getCartCount = function(){
 			setStorage("cart_item_count", data.details.count);
 			$(".cart_count").html(data.details.count);
 			$(".tabbar__badge").html(data.details.count);
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       $(".basket_count").html(data.details.basket_count);
       $(".basket_total").html(data.details.basket_total);
       setStorage("basket_count", data.details.basket_count);
       setStorage("basket_total", data.details.basket_total);
-/** Fim da atualização **/
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** Fim da atualizaÃ§Ã£o **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       $(".cart-btn").addClass("block");
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 		} else {			
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       $(".cart-btn").removeClass("block");
       removeStorage("basket_count");
       removeStorage("basket_total");
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 			removeStorage("cart_item_count");
 			$(".cart_count").html('');
 			$(".tabbar__badge").html('');			
@@ -7308,10 +7308,10 @@ clearCartDiv = function(){
     $(".cart_count").html('');
     $(".tabbar__badge").html('');
     $(".bottom_toolbar_checkout").hide();
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
   $("ons-back-button span").addClass("fill-black");
 	$("ons-back-button").addClass("background-white");
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
     clearBasket();    
     $(".one_time_payment").val( '' );
     removeStorage("cart_item_count");
@@ -7385,7 +7385,7 @@ var printDeliveryAddress = function(address){
 	$(".delivery_address_label").html(address);
 };
 
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 initColetaAddress = function () {
 	has_addressbook = $(".has_addressbook").val();
 	if (has_addressbook == 1) {
@@ -7490,7 +7490,7 @@ var setRetornoAddress = function () {
 var printRetornoAddress = function (address) {
 	$(".retorno_address_label").html(address);
 };
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 
 /*placeholder = function(field, value){
 	$(field).attr("placeholder", t(value) );
@@ -7552,7 +7552,7 @@ var checkout = function(){
 		  
 		break;
 		
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 		case "prestacao_servico":
 			var street = $(".delivery_address").val();
 			if (empty(street)) {
@@ -7637,7 +7637,7 @@ var checkout = function(){
 				}
 			}
 			break;
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 			
 		case "pickup":
 		  delivery_time_set = getStorage("delivery_time_set");		  
@@ -7738,9 +7738,9 @@ var initPayment = function(){
 		
 	switch (payment_provider){
 		case "cod":		 
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 			if (transaction_type == "delivery" || transaction_type == "prestacao_servico" || transaction_type == "coleta" || transaction_type == "coleta_retorno" || transaction_type == "pre_coleta" || transaction_type == "pre_coleta_retorno") {
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 		  	 app_settings = getAppSettings();		  	 
 		  	 if(app_settings.cod_change_required==2){
 		  	    showPage("cod_forms.html");
@@ -7816,9 +7816,9 @@ var payNow = function(payment_params){
 	switch (payment_provider){
 		case "cod":
 		case "obd":
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 			if (transaction_type == "delivery" || transaction_type == "prestacao_servico" || transaction_type == "coleta" || transaction_type == "coleta_retorno" || transaction_type == "pre_coleta" || transaction_type == "pre_coleta_retorno")  {
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 		      params+='&order_change='+ $("#order_change").val();
 		  }
 		  /*if (transaction_type=="dinein"){
@@ -7847,13 +7847,13 @@ var payNow = function(payment_params){
 		break;
 		
 		case "delivery":
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 		case "prestacao_servico":
 		case "coleta":
 		case "coleta_retorno":
 		case "pre_coleta":
 		case "pre_coleta_retorno":
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 		  var delivery_asap = document.getElementById('delivery_asap');
 		  if(!empty(delivery_asap)){
 		     params+= "&delivery_asap=" + delivery_asap.checked;
@@ -8002,9 +8002,9 @@ logout = function(){
 			
 			processDynamicAjax('logout','');
 			removeStorage("user_token");			
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       removeStorage("user_firstname");
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 			resetToPage('tabbar.html','none');
 		}
 	});
@@ -8094,7 +8094,7 @@ setAddressBook = function(){
 	$(".frm_address_form_select").submit();
 };
 
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 setColetaBook = function () {
 	$(".frm_coleta_form_select").validate({
 		submitHandler: function (form) {
@@ -8136,7 +8136,7 @@ setRetornoBook = function () {
 	});
 	$(".frm_retorno_form_select").submit();
 };
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 
 initRaty = function(score){
 	$('.raty-stars-editable').raty({ 
@@ -8198,12 +8198,12 @@ actionSheetOrder = function(order_id, add_review, add_cancel, add_track){
 		};	
 	}
 	
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
   // actions[5] = {
   //   label: t("Close"),
   //   icon: 'md-close'
   // };
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	
 	//delete actions[ 2 ];
 		
@@ -8268,23 +8268,23 @@ actionSheetFavorites = function(id, merchant_id){
 	actions = [];
 		
 	actions[0] = {
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
     label: t("View Menu"),
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	};	
 	
 	actions[1] = {
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
     label: t("Remove from favorites"),
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	};	
 	
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
   // actions[3] = {
   //   label: t("Cancel"),
   //   icon: 'md-close'
   // };
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	
 	ons.openActionSheet({
 	    title: t("What do you want to do") + "?",
@@ -8293,13 +8293,13 @@ actionSheetFavorites = function(id, merchant_id){
   }).then(function (index) { 
   	   console.log('index: ', index) 
   	   if (index==0){  	   	
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       loadMerchant(merchant_id);
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
   	   } else if( index==1){  	   	  
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       removeFavorite(id);
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
   	   }
   });
 };
@@ -8312,12 +8312,12 @@ actionSheetCards = function(id){
 	actions[2] = {
 		 label: t("Remove"),
 	};	
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
   // actions[3] = {
   //   label: t("Cancel"),
   //   icon: 'md-close'
   // };
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	
 	ons.openActionSheet({
 	    title: t("What do you want to do") + "?",
@@ -8350,7 +8350,7 @@ actionSheetCards = function(id){
   });
 };
 
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 continueToApp = function(){
 	
 	if(!isLogin()){
@@ -8419,7 +8419,7 @@ StartUpBannerAutoScroll = function(){
 	   scroll_banner.next();
 	}
 };
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 
 actionSheetBook = function(id){
 	actions = [];	
@@ -8429,7 +8429,7 @@ actionSheetBook = function(id){
 	actions[2] = {
 		 label: t("Remove"),
 	};	
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
   // actions[3] = {
   //   label: t("Cancel"),
   //   icon: 'md-close'
@@ -8754,9 +8754,9 @@ identifyLocation = function(){
 
 identifyLocationLoader = function(loading) {
 	if(loading){
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
     $(".print_location_address").html(t("identtifying location"));
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 		$("#confirm_location").attr("disabled",true); 
 		$("#location_add_details").attr("disabled",true); 
 	} else {
@@ -8819,9 +8819,9 @@ ReCurrentLocation = function(){
     }, 100); 
 };
 
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 setRecentSearch = function(address, lat, lng, street, numero, city,  state, zipcode, location_name, country){
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	
 	if(empty(lat)){
 		showToast( t('invalid latitude') );
@@ -8844,9 +8844,9 @@ setRecentSearch = function(address, lat, lng, street, numero, city,  state, zipc
 	   current_page_id = onsenNavigator.topPage.id;
 	   dump("current_page_id=>"+current_page_id);
 	   $("#"+current_page_id +" .street").val( '' );
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 	   $("#"+current_page_id +" .numero").val( '' );
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	   $("#"+current_page_id +" .city").val( '' );
 	   $("#"+current_page_id +" .state").val( '' );
 	   $("#"+current_page_id +" .zipcode").val( '' );
@@ -8856,11 +8856,11 @@ setRecentSearch = function(address, lat, lng, street, numero, city,  state, zipc
 	   if(!empty(street)){
 	   	  $(".street").val(street);
 	   }
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 	   	if(!empty(numero)){
 	   	  $(".numero").val(numero);
 	   	}
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	   if(!empty(city)){
 	   	  $(".city").val(city);
 	   }
@@ -8913,7 +8913,7 @@ AddFavorite = function(){
 favoriteButton = function(is_added){
 	html='';
 	if(is_added){
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
     html += '<div class="stic-share" onclick="AddFavorite()">';
     html += '<div>';
     html += '<img src="lib/icons/heart-full.svg" style="opacity:1" onerror="this.src=\'heart-full.png\'">';
@@ -8925,7 +8925,7 @@ favoriteButton = function(is_added){
     html += '<img src="lib/icons/heart.svg" onerror="this.src=\'heart.png\'">';
     html += '</div>';
     html += '</div>';
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	}
 	return html;
 }
@@ -9150,7 +9150,7 @@ enabledSocialLogin = function(){
 	   	
 	   	    html+='<ons-list-item modifier="nodivider pad_right social_list">';
 		   	  
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       html += '<div class="or-use bold"><p>' + t("Or use") + '</p></div>';
 		   	  
 		       html+='<ons-row>';
@@ -9169,7 +9169,7 @@ enabledSocialLogin = function(){
 			        html+='<div class="table">';
       html += '<div class="col" style="width:15%;"><img class="stic-social-icon" src="lib/icons/google.svg" onerror="this.src=\'google.png\'"></ons-icon></div>';
       html += '<div class="col">' + t("Google") + '</div>';
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 			        html+='</div>';
 			      html+='</ons-button>';		          
 		          html+='</ons-col>';		          
@@ -9611,12 +9611,12 @@ actionSheetNotification = function(id){
 	actions[1] = {
 		 label: t("Remove"),
 	};	
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
   // actions[2] = {
   //   label: t("Cancel"),
   //   icon: 'md-close'
   // };
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	ons.openActionSheet({
 	    title: t("What do you want to do") + "?",
 	    cancelable: true,
@@ -10258,7 +10258,7 @@ setAddressBookLocation = function(){
 	$(".frm_address_form_select_location").submit();
 };
 
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 var setColetaLocation = function () {
 	$(".frm_coleta_form_location").validate({
 		submitHandler: function (form) {
@@ -10465,7 +10465,7 @@ fillRetornoForm = function () {
 		}
 	}
 };
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 
 fillAddressForm = function(){
 	dump('fillAddressForm');
@@ -10605,9 +10605,9 @@ setCartTheme = function(){
 	cart_theme = getCartTheme();			
 	switch(cart_theme){
 		case "2":		  
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       // $("ons-fab.cart_fab").remove();
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 		  html_basket_count = $(".basket_count").html();
 		  if(empty(html_basket_count)){
 		     $(".basket_count").html('<ons-icon icon="md-spinner" size="13px" spin></ons-icon>');
@@ -10616,9 +10616,9 @@ setCartTheme = function(){
 		break;
 		
 		default:		 		  
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
       // $("ons-bottom-toolbar.basket_toolbar").remove();
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 		  $("ons-fab.fab_floating_category").remove();
 		break;
 	}
@@ -10630,14 +10630,14 @@ setBasket = function(data){
 	$(".basket_total").html(data.basket_total);
 	setStorage("basket_count", data.basket_count);
 	setStorage("basket_total", data.basket_total);
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
   if (data.basket_count != 0) {
     $(".cart-btn").addClass("block");
   }
   else {
     $(".cart-btn").removeClass("block");
   }
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 };
 
 ReSetBasket = function(){
@@ -10803,7 +10803,7 @@ preCheckout = function(){
 		  
 		break;
 			
-/** Atualização Master Hub (Minhas Modificações) **/
+/** AtualizaÃ§Ã£o Master Hub (Minhas ModificaÃ§Ãµes) **/
 		case "prestacao_servico":
 		  var street = $(".delivery_address").val();
 		  if(empty(street)){
@@ -10888,7 +10888,7 @@ preCheckout = function(){
 			  }
 		  }
 		break;
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 
 		case "pickup":
 		  delivery_time_set = getStorage("delivery_time_set");		  
@@ -10976,7 +10976,7 @@ function in_array(needle, haystack, argStrict) {
     return false;
 }
 
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
 fillUser = function (stic_username) {
   if (!empty(stic_username)) {
     $(".print_username").html(t("Hello") + ", " + stic_username);
@@ -10985,7 +10985,7 @@ fillUser = function (stic_username) {
     $(".home-user-section").hide();
   }
 }
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 setSortPromoFood = function(){
 	var sort_fields = $('#sort_food_promo input[name=sortby]:checked').val();		
 	var sort_by = $( "#sort_food_promo .sort_asc_desc" ).val();
@@ -11309,9 +11309,9 @@ initAndroid = function(){
         
 };
 
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
 subscribe = function () {
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	try {
 		
 	    window.FirebasePlugin.subscribe("broadcast", function(){
@@ -11325,9 +11325,9 @@ subscribe = function () {
     } 
 }
 
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
 unsubscribe = function () {
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 	try {
 	    window.FirebasePlugin.unsubscribe("broadcast", function(){
 	        //showToast("Unsubscribed from topic");
@@ -11343,7 +11343,7 @@ unsubscribe = function () {
 
 /*END FIREBASEX  */
 
-/** Atualização Master Hub (Novo Aplicativo) **/
+/** AtualizaÃ§Ã£o Master Hub (Novo Aplicativo) **/
 EnabledDarkTheme = function () {
   var stic_dark_theme = $("input[name=stic_dark_theme]:checked").val();
   if (empty(stic_dark_theme)) {
@@ -11368,5 +11368,5 @@ applyDarkTheme = function (dark_mode) {
   }
   setStorage("stic_dark_theme", dark_mode);
 }
-/** Fim da atualização **/
+/** Fim da atualizaÃ§Ã£o **/
 /*END OF SCRIPT*/
