@@ -455,7 +455,7 @@ document.addEventListener('init', function(event) {
    	     placeholder(".city", t("City") );
    	     placeholder(".state", t("State") );
    	     placeholder(".zipcode", t("Zip Code") );
-   	     placeholder(".location_name", t("Floor/unit/Room #") );*/
+   	     placeholder(".location_name", t("Floor/unit/Room #") );
    	     
    	     
    	     AnalyticsTrack("page map selection"); 
